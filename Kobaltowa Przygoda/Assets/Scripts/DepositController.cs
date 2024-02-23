@@ -12,6 +12,11 @@ public class DepositController : MonoBehaviour
     [SerializeField] int defaultExcavateRate = 1;
     [SerializeField] int defaultEfficiencyRate = 1;
 
+
+    [Space(5)]
+    [Header("UI")]
+    [SerializeField] private DepositUI depositUI;
+
     private int currentMinePoints = 0;
 
     private int excavatedCobalt = 0;
@@ -24,6 +29,9 @@ public class DepositController : MonoBehaviour
     private void Start()
     {
         UpdateRates(defaultExcavateRate, defaultEfficiencyRate);
+        depositUI.SetMaxValue(requiredMinePoints);
+        depositUI.UpdateExcavationProgress(0);
+        depositUI.UpdateExcavatedCobalt(0);
     }
 
     private void Update()
@@ -43,7 +51,9 @@ public class DepositController : MonoBehaviour
         {
             currentMinePoints = 0;
             excavatedCobalt += efficiencyRate;
+            depositUI.UpdateExcavatedCobalt(excavatedCobalt);
         }
+        depositUI.UpdateExcavationProgress(currentMinePoints);
     }
 
 
@@ -57,6 +67,7 @@ public class DepositController : MonoBehaviour
     {
         isMining = true;
         UpdateRates(minerCount, defaultEfficiencyRate);
+        depositUI.SetMaxValue(requiredMinePoints);
     }
 
     public (int, int) StopExcavation()
@@ -65,6 +76,7 @@ public class DepositController : MonoBehaviour
         int retCobalt = excavatedCobalt;
         int retMiner = minerCount;
         excavatedCobalt = 0;
+        depositUI.UpdateExcavatedCobalt(excavatedCobalt);
         return (retCobalt, retMiner);
     }
 
