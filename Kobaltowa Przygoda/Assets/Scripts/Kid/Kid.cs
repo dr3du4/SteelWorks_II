@@ -21,7 +21,7 @@ public class Kid : MonoBehaviour {
                 rb.velocity = Vector2.zero;
                 rb.velocity = Vector2.ClampMagnitude(new Vector2(_direction.x,_direction.y) * movementSpeed, movementSpeed);
             } else rb.velocity = Vector3.zero;
-        }
+        } else rb.velocity = Vector3.zero;
     }
     
     public void StartFollowing() {
