@@ -8,11 +8,14 @@ public class MinerAssignPanel : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] TextMeshProUGUI numberText;
+    [SerializeField] GameObject invalidMinerCountPanel;
     [SerializeField] int maxMinerCount = 5;
     private int minMinerCount = 0;
 
+
     private int currentMinerCount = 0;
     Transform depositPivot = null;
+    private PlayerMine playerMine;
 
     [Space(5)]
     [Header("Binds")]
@@ -27,11 +30,18 @@ public class MinerAssignPanel : MonoBehaviour
     public void SetVisibility(bool visibility)
     {
         gameObject.SetActive(visibility);
+        if(playerMine)
+            invalidMinerCountPanel.SetActive(playerMine.minerCount < currentMinerCount);
     }
 
     public void SetPivot(Transform pivot)
     {
         depositPivot = pivot;
+    }
+
+    public void SetPlayerMine(PlayerMine player)
+    {
+        playerMine = player;
     }
 
     private void Update()
@@ -50,13 +60,15 @@ public class MinerAssignPanel : MonoBehaviour
             }
 
             GetComponent<RectTransform>().position = cam.WorldToScreenPoint(depositPivot.position);
-
+            invalidMinerCountPanel.GetComponent<RectTransform>().position = cam.WorldToScreenPoint(depositPivot.position);
         }
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         numberText.text = currentMinerCount.ToString();
+        if(playerMine)
+            invalidMinerCountPanel.SetActive(playerMine.minerCount < currentMinerCount);
     }
 
     public int GetMinerCountSelection()
