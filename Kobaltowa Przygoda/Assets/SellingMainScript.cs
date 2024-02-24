@@ -9,6 +9,7 @@ public class SellingMainScript : MonoBehaviour
     public int price;
     public TMP_Text priceText;
     public kobaltSelling kobaltowyManager;
+    public TMP_Text money;
     void Start()
     {
         priceText.text = price.ToString();
@@ -21,10 +22,13 @@ public class SellingMainScript : MonoBehaviour
     }
 
     public void Buy()
-    {
+    {   
+        Debug.Log(kobaltowyManager.coinyWPlecaku);
         if (price < kobaltowyManager.coinyWPlecaku)
         {
-            kobaltowyManager.coinyWPlecaku -= price;
+            
+            kobaltowyManager.coinyWPlecaku = kobaltowyManager.coinyWPlecaku-price;
+            
             if (!isRepetative)
             {
                 gameObject.SetActive(false);

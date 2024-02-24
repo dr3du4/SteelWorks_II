@@ -52,6 +52,7 @@ public class kobaltSelling : MonoBehaviour
 
     public void AddKobaltToSell()
     {
+        Debug.Log(kobaltAmount);
         if (kobaltAmount < kobaltWPlecaku)
         {
             kobaltAmount += 1;
@@ -71,15 +72,13 @@ public class kobaltSelling : MonoBehaviour
 
        money = 0;
        kobaltAmount = 0;
-       kursText.text = kurs.ToString();
-       KobaltPlecakText.text = kobaltWPlecaku.ToString();
-       coinPlecakText.text = coinyWPlecaku.ToString();
-       moneyText.text = money.ToString();
+      
 
 
     }
     public void OddKobaltToSell()
     {
+        Debug.Log("ODD");
         if (kobaltAmount > 1)
         {
             kobaltAmount -= 1;

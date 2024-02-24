@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,15 +12,9 @@ public class MainButtonScirpt : MonoBehaviour
 
     void Start()
     {
-        // Znajdź wszystkie obiekty oznaczone tagiem "Sklep"
-        GameObject[] sklepyTag = GameObject.FindGameObjectsWithTag("Sklep");
-
-        // Dodaj znalezione obiekty do listy
-        foreach (GameObject sklepObject in sklepyTag)
-        {
-            sklepy.Add(sklepObject);
-        }
-        foreach (var sklep in sklepy)
+      
+      
+        foreach (GameObject sklep in sklepy)
         {
             sklep.SetActive(false);
         }
@@ -33,10 +28,22 @@ public class MainButtonScirpt : MonoBehaviour
 
     public void OnOff()
     {
-        foreach (var sklep in sklepy)
+        foreach  (GameObject sklep in sklepy)
         {
             sklep.SetActive(false);
         }
         odpowiedniSklep.SetActive(true);
+    }
+
+    private void Awake()
+    {
+          GameObject[] sklepyTag = GameObject.FindGameObjectsWithTag("Sklep");
+        
+                // Dodaj znalezione obiekty do listy
+                foreach (GameObject sklepObject in sklepyTag)
+                {
+                    sklepy.Add(sklepObject);
+                }
+        
     }
 }
