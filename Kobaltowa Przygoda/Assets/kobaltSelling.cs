@@ -5,49 +5,56 @@ using UnityEngine;
 
 public class kobaltSelling : MonoBehaviour
 {
-
-    public int kobaltWPlecaku = 10;
-    public float  coinyWPlecaku = 0;
-    
-    
-    public int kobaltAmount=0;
-    public float kurs = 0;
     public float money;
-    
-    
+    public int kobaltAmount;
+    public float kurs = 0;
+    public GameObject eq;
     
     public TMP_Text kursText;
     public TMP_Text moneyText;
     public TMP_Text coinPlecakText;
     public TMP_Text KobaltPlecakText;
 
+
+    private int kobaltWPlecaku;
+    private float coinyWPlecaku;
+    
     // Start is called before the first frame update
     void Start()
     {
-        kurs = (Random.Range(212,482))/100f;
-        money = kobaltAmount * kurs;
+        backpack plecak = eq.GetComponent<backpack>();
         
-        
-        kursText.text = kurs.ToString();
-        KobaltPlecakText.text = kobaltWPlecaku.ToString();
-        coinPlecakText.text = coinyWPlecaku.ToString();
-        moneyText.text = money.ToString();
+            if (eq != null)
+            {
+                kobaltWPlecaku = plecak.kobalAmount;
+                coinyWPlecaku = plecak.money;
 
+                kurs = (Random.Range(212, 482)) / 100f;
+                money = kobaltAmount * kurs;
+
+                kursText.text = kurs.ToString();
+                KobaltPlecakText.text = kobaltWPlecaku.ToString();
+                coinPlecakText.text = coinyWPlecaku.ToString();
+                moneyText.text = money.ToString();
+            }
+            else
+            {
+                Debug.LogError("Obiekt eq nie został przypisany w komponencie kobaltSelling.");
+            }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-         kursText.text = kurs.ToString();
-                KobaltPlecakText.text = kobaltWPlecaku.ToString();
-                coinPlecakText.text = coinyWPlecaku.ToString();
-                moneyText.text = money.ToString();
+         
     }
 
     public void updateTrade()
     {
         money = kobaltAmount * kurs;
-       
+        Debug.Log("Updated money: " + money);
+        moneyText.text = money.ToString();
     }
 
     public void AddKobaltToSell()
@@ -65,14 +72,18 @@ public class kobaltSelling : MonoBehaviour
     public void Buy()
     {
        if(kobaltAmount>0)
-       {
+       { backpack plecak = eq.GetComponent<backpack>();
              kobaltWPlecaku = kobaltWPlecaku - kobaltAmount;
                     coinyWPlecaku += money;
+                    plecak.money += money; 
        }
 
        money = 0;
        kobaltAmount = 0;
-      
+       kursText.text = kurs.ToString();
+       KobaltPlecakText.text = kobaltWPlecaku.ToString();
+       coinPlecakText.text = coinyWPlecaku.ToString();
+       moneyText.text = money.ToString();
 
 
     }
