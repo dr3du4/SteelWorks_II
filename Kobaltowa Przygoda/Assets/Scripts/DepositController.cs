@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
-public class DepositController : MonoBehaviour
+public class DepositController : SerializedMonoBehaviour
 {
     static public float tickRate = 0.3f;
     private float tickTimer = 0f;
@@ -14,21 +15,23 @@ public class DepositController : MonoBehaviour
 
 
     [Space(5)]
-    [Header("UI")]
+    [Title("UI")]
     [SerializeField] private DepositUI depositUI;
 
     private int currentMinePoints = 0;
 
     private int excavatedCobalt = 0;
 
-    private int minerCount = 1;
-    private int efficiencyRate = 1;
+    [Space(5)]
+    [Title("Debug")]
+    [ShowInInspector] [ReadOnly] private int minerCount = 0;
+    private int efficiencyRate = 0;
 
     bool isMining = false;
 
     private void Start()
     {
-        UpdateRates(defaultExcavateRate, defaultEfficiencyRate);
+        UpdateRates(0, defaultEfficiencyRate);
         depositUI.SetMaxValue(requiredMinePoints);
         depositUI.UpdateExcavationProgress(0);
         depositUI.UpdateExcavatedCobalt(0);
@@ -45,8 +48,11 @@ public class DepositController : MonoBehaviour
 
     void Excavate()
     {
+        if (minerCount == 0)
+            isMining = false;
+
         if (currentMinePoints < requiredMinePoints)
-            currentMinePoints += minerCount;
+            currentMinePoints += minerCount * defaultExcavateRate;
         else
         {
             currentMinePoints = 0;
@@ -80,9 +86,21 @@ public class DepositController : MonoBehaviour
         return (retCobalt, retMiner);
     }
 
+    public int KidnapWorker()
+    {
+        minerCount--;
+        UpdateRates(minerCount, defaultEfficiencyRate);
+        return 1;
+    }
+
     public bool MiningStatus()
     {
         return isMining;
     }
 
+
+    public int GetWorkerCount()
+    {
+        return minerCount;
+    }
 }

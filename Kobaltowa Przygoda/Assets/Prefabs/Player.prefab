@@ -223,8 +223,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d924ef52af5e9446a6c68852de0c17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kids: []
-  kidsInRange: []
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  kidRange: 1.5
+  kidPrefab: {fileID: 4378890545097111009, guid: c6fc7ffda174ca0518b7546b129f8382, type: 3}
+  leaveKidBind: 113
+  gatherKidBind: 101
+  followingKids: []
 --- !u!114 &3555507501097471408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,5 +251,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minerAssignPanel: {fileID: 0}
   depositInteractBind: 101
-  minerCount: 30
+  minerCount: 3
   totalCobalt: 0

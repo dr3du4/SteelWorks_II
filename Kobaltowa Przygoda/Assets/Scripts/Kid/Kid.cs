@@ -13,7 +13,6 @@ public class Kid : MonoBehaviour {
     private Vector3 _direction;
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody2D>();
     }
     
     private void Update() {
@@ -21,7 +20,7 @@ public class Kid : MonoBehaviour {
             if (Vector3.Distance(player.position, transform.position) > maxDistance) {
                 agent.SetDestination(player.position);
             }
-        } else rb.velocity = Vector2.zero;
+        } 
     }
     
     public void StartFollowing() {
