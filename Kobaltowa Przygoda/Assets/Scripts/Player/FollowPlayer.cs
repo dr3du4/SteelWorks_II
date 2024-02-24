@@ -13,7 +13,6 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] private float minY = -48.61f; 
     [SerializeField] private float maxY = -29.39f;
     private Vector3 _newPos;
-    private bool isFollowing = false;
     
     private void Start() {
         _transform = GetComponent<Transform>();

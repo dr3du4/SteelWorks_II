@@ -26,7 +26,7 @@ public class KidsMaster : MonoBehaviour
     }
     
 	private void OnTriggerEnter2D(Collider2D other) {
-		if (other.transform.parent.CompareTag("Kid")){
+		if (transform.parent != null && other.transform.parent.CompareTag("Kid")){
             Kid k = other.transform.parent.GetComponent<Kid>();
 			if(!kids.Contains(k) && !kidsInRange.Contains(k)) {
 				kidsInRange.Add(k);
@@ -35,7 +35,7 @@ public class KidsMaster : MonoBehaviour
 	}
 
 	private void OnTriggerExit2D(Collider2D other) {
-		if (other.transform.parent.CompareTag("Kid")){
+		if (transform.parent != null && other.transform.parent.CompareTag("Kid")){
             Kid k = other.transform.parent.GetComponent<Kid>();
 			kidsInRange.Remove(k);
         }

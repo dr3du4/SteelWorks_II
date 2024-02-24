@@ -6,7 +6,8 @@ public class VolumeSlider : MonoBehaviour
     [SerializeField] private Slider slider;
 
     private void Start() {
-        slider.value = PlayerPrefs.GetFloat("Volume");
+        if (PlayerPrefs.HasKey("Volume")) slider.value = PlayerPrefs.GetFloat("Volume");
+        else PlayerPrefs.SetFloat("Volume",1f);
     }
     
     public void SetVolume() {
