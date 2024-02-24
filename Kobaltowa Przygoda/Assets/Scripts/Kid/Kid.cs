@@ -11,6 +11,8 @@ public class Kid : MonoBehaviour {
     public float movementSpeed = 4f;
     private Vector3 _direction;
 
+    public bool isMining = false;
+
 
     static int playerCount;
     public int playerId;
@@ -27,7 +29,7 @@ public class Kid : MonoBehaviour {
     }
     
     private void Update() {
-        if (isFollow) {
+        if (isFollow && !isMining) {
             if (Vector3.Distance(player.position, transform.position) > maxDistance) {
                 agent.SetDestination(player.position);
             }
@@ -35,14 +37,26 @@ public class Kid : MonoBehaviour {
     }
     
     public void StartFollowing() {
-        isFollow = true;
-        if (player == null) {
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        if (!isMining)
+        {
+            isFollow = true;
+            if (player == null)
+            {
+                player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            }
         }
+    }
+
+    public void FollowMonster(Transform monster)
+    {
+        isFollow = true;
+        player = monster;
+        agent.speed = 10f;
     }
 
     public void StopFollowing(Vector2 target) {
         isFollow = false;
+        player = null;
         agent.SetDestination(target);
     }
 
@@ -57,4 +71,16 @@ public class Kid : MonoBehaviour {
         player = k.GetPlayer();
         playerId = k.playerId;
     }
+
+    public void BeginMining(Vector3 position)
+    {
+        isMining = true;
+        agent.SetDestination(position);
+    }
+
+    public void StopMining()
+    {
+        isMining = false;
+    }
+    
 }

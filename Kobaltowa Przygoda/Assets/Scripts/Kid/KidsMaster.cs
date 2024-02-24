@@ -33,7 +33,7 @@ public class KidsMaster : SerializedMonoBehaviour
     }
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space))
-            ReturnKids(2);
+            SpawnKids(2);
         if (refreshKids)
             allKids = FetchAllKids();
 
@@ -52,8 +52,11 @@ public class KidsMaster : SerializedMonoBehaviour
 
 		if (Input.GetKeyDown(gatherKidBind)) {
             foreach(Kid k in kidsInRange) {
-				followingKids.Add(k);
-				k.StartFollowing();		
+                if (!k.isMining)
+                {
+                    followingKids.Add(k);
+                    k.StartFollowing();
+                }
 			}
 			kidsInRange.Clear();
         }
@@ -88,11 +91,16 @@ public class KidsMaster : SerializedMonoBehaviour
         List<Kid> ret = new();
         if(followingKids.Count >= count)
         {
-            for (int i = 0; i < count; i++)
+            for (int i = count - 1; i >= 0; i--)
             {
-                Kid k = followingKids[followingKids.Count - 1];
+                Kid k = followingKids[i];
                 ret.Add(k);
-                DestroyChild(k);
+                //DestroyChild(k);
+            }
+            foreach(Kid k in ret)
+            {
+                k.StopFollowing(transform.position);
+                Debug.Log(followingKids.Remove(k));
             }
         }
         return ret;
@@ -102,17 +110,13 @@ public class KidsMaster : SerializedMonoBehaviour
     {
         foreach(Kid k in returnedKids)
         {
-            Kid newKid = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f)), transform.rotation).GetComponent<Kid>();
-
-            newKid.CopyDataFromKid(k);
-
-            allKids.Add(newKid);
-            followingKids.Add(newKid);
-            newKid.StartFollowing();
+            //allKids.Add(k);
+            followingKids.Add(k);
+            k.StartFollowing();
         }
     }
 
-    public void ReturnKids(int returnedKids)
+    public void SpawnKids(int returnedKids)
     {
         for(int i=0; i<returnedKids; i++)
         {

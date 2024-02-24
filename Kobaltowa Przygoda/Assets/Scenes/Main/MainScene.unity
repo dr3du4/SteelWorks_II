@@ -672,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CobaltDeposit
       objectReference: {fileID: 0}
+    - target: {fileID: 5143257705180137483, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5143257705180137483, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
     - target: {fileID: 6168150696688178641, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
