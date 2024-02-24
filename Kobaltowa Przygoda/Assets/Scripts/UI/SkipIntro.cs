@@ -17,9 +17,9 @@ public class SkipIntro : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
-        if (Input.GetKeyDown("space") && _text.color.a == 0f) {
+        if (Input.GetKeyDown("escape") && _text.color.a == 0f) {
             StartCoroutine(FadeIn());
-        } else if (Input.GetKeyDown("space"))sceneChanger.GoToNextScene();
+        } else if (Input.GetKeyDown("escape"))sceneChanger.GoToNextScene();
     }
 
     private IEnumerator FadeIn() {
