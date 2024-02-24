@@ -79,18 +79,19 @@ public class KidsMaster : SerializedMonoBehaviour
         return retVal;
     }
 
-    public bool RemoveKids(int count)
+    public List<Kid> RemoveKids(int count)
     {
+        List<Kid> ret = new();
         if(followingKids.Count >= count)
         {
             for (int i = 0; i < count; i++)
             {
                 Kid k = followingKids[followingKids.Count - 1];
+                ret.Add(k);
                 DestroyChild(k);
             }
-            return true;
         }
-        return false;
+        return ret;
     }
 
     public void ReturnKids(int count)
@@ -104,14 +105,27 @@ public class KidsMaster : SerializedMonoBehaviour
         }
     }
 
-    public void DestroyChild(Kid k)
+    public Kid DestroyChild(Kid k)
     {
         allKids.Remove(k);
         followingKids.Remove(k);
+        Kid ret = k;
         Destroy(k.gameObject);
+        return ret;
     }
 
-    
+    public Kid GetRandomKid()
+    {
+        if(allKids.Count > 0)
+            return allKids[Random.Range(0, allKids.Count)];
+
+        foreach(DepositController deposit in FindObjectsOfType<DepositController>())
+        {
+            if(deposit.GetWorkerCount() > 0)
+                return deposit.GetRandomWorker();
+        }
+        return null;
+    }
 
 
 
