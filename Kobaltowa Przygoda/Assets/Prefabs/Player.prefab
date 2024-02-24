@@ -236,7 +236,7 @@ MonoBehaviour:
   kidPrefab: {fileID: 4378890545097111009, guid: c6fc7ffda174ca0518b7546b129f8382, type: 3}
   lootPrefab: {fileID: 5222109853491430195, guid: 18bcdd3d8460019b79e089fd03996284, type: 3}
   leaveKidBind: 113
-  gatherKidBind: 101
+  gatherKidBind: 114
   followingKids: []
 --- !u!114 &3555507501097471408
 MonoBehaviour:

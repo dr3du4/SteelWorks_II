@@ -54,62 +54,58 @@ public class Pursuer : Enemy
             }
             else
             {
-                if (!target && !depositToLoot)
+                if (!target)
                 {
-                    bool targetPutToWork = false;
-                    
-                    foreach(DepositController deposit in FindObjectsOfType<DepositController>())
-                    {
-                        if (deposit.WorkerInDeposit(target))
-                        {
-                            targetPutToWork = true;
-                            depositToLoot = deposit;
-                        }
-                    }
-
-                    if (!targetPutToWork)
-                    {
-                        target = kidsMaster.FindKidById(targetId);
-
-                        if (!target)
-                        {
-                            target = SelectRandomTarget();
-                            targetId = target.playerId;
-                        }
-
-                    }
-                    else if(depositToLoot)
-                        agent.SetDestination(depositToLoot.transform.position);
-
-                }
-                else if(depositToLoot)
-                {
-                    agent.SetDestination(depositToLoot.transform.position);
-
-                    if(agent.remainingDistance <= 0.1f)
-                    {
-                        // KILLL
-                        escaping = true;
-                        depositToLoot.KidnapWorker(target);
-                        target = null;
-                        targetId = -1;
-                        nextStartPoint = startPoints[Random.Range(0, startPoints.Count)];
-                    }
-
-
+                    target = SelectRandomTarget();
+                    if(target != null)
+                        targetId = target.playerId;
                 }
                 else
                 {
-                    depositToLoot = null;
-                    agent.SetDestination(target.transform.position);
-                    if(Vector2.Distance(transform.position, target.transform.position) <= 1f)
+                    if (target.isMining && !depositToLoot)
                     {
-                        // KILL
-                        escaping = true;
-                        kidsMaster.DestroyChild(target);
-                        target = null;
-                        targetId = -1;
-                        nextStartPoint = startPoints[Random.Range(0, startPoints.Count)];
+                        // bool targetPutToWork = false;
+
+                        foreach (DepositController deposit in FindObjectsOfType<DepositController>())
+                        {
+                            if (deposit.WorkerInDeposit(target))
+                            {
+                                // targetPutToWork = true;
+                                depositToLoot = deposit;
+                            }
+                        }
+
+                        /*
+                        if (!targetPutToWork)
+                            target = kidsMaster.FindKidById(targetId);*/
+                    }
+                    else if (target.isMining && depositToLoot)
+                    {
+                        agent.SetDestination(depositToLoot.transform.position);
+
+                        if (Vector2.Distance(transform.position, target.transform.position) <= 1f)
+                        {
+                            // KILLL
+                            escaping = true;
+                            kidsMaster.DestroyChild(depositToLoot.KidnapWorker(target));
+                            target = null;
+                            targetId = -1;
+                            nextStartPoint = startPoints[Random.Range(0, startPoints.Count)];
+                        }
+                    }
+                    else
+                    {
+                        depositToLoot = null;
+                        agent.SetDestination(target.transform.position);
+                        if (Vector2.Distance(transform.position, target.transform.position) <= 1f)
+                        {
+                            // KILL
+                            escaping = true;
+                            kidsMaster.DestroyChild(target);
+                            target = null;
+                            targetId = -1;
+                            nextStartPoint = startPoints[Random.Range(0, startPoints.Count)];
+                        }
                     }
                 }
             }
