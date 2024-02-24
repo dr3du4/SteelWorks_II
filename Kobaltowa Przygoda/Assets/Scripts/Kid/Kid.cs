@@ -27,6 +27,8 @@ public class Kid : MonoBehaviour {
     }
     
     private void Update() {
+
+
         if (isFollow) {
             if (Vector3.Distance(player.position, transform.position) > maxDistance) {
                 agent.SetDestination(player.position);
@@ -51,10 +53,18 @@ public class Kid : MonoBehaviour {
         return player;
     }
 
-    public void CopyDataFromKid(Kid k)
+    public void CopyDataFromKid(KidData k)
     {
         // Copy data
-        player = k.GetPlayer();
+        player = k.player;
         playerId = k.playerId;
+        efficiency = k.efficiency;
+        hungry = k.hungry;
+        speed = k.speed;
+    }
+
+    public KidData GetKidData()
+    {
+        return new KidData(player, transform.position, playerId, efficiency, hungry, speed);
     }
 }

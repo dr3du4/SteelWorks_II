@@ -98,9 +98,9 @@ public class KidsMaster : SerializedMonoBehaviour
         return ret;
     }
 
-    public void ReturnKids(List<Kid> returnedKids)
+    public void ReturnKids(List<KidData> returnedKids)
     {
-        foreach(Kid k in returnedKids)
+        foreach(KidData k in returnedKids)
         {
             Kid newKid = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f)), transform.rotation).GetComponent<Kid>();
 
@@ -136,10 +136,10 @@ public class KidsMaster : SerializedMonoBehaviour
         return ret;
     }
 
-    public Kid GetRandomKid()
+    public KidData GetRandomKid()
     {
         if(allKids.Count > 0)
-            return allKids[Random.Range(0, allKids.Count)];
+            return allKids[Random.Range(0, allKids.Count)].GetKidData();
 
         foreach(DepositController deposit in FindObjectsOfType<DepositController>())
         {

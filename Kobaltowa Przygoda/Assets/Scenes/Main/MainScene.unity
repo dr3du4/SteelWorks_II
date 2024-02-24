@@ -620,71 +620,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6823539153779676200, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
   m_PrefabInstance: {fileID: 1147777238}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1160206686
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 17.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 86840204032107161, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 103071585179109732, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_Name
-      value: CobaltDeposit
-      objectReference: {fileID: 0}
-    - target: {fileID: 6168150696688178641, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6168150696688178641, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
 --- !u!1001 &1173402525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1537,7 +1472,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1147777238}
-  - {fileID: 1160206686}
   - {fileID: 1173402525}
   - {fileID: 1108160107}
   - {fileID: 726447272}

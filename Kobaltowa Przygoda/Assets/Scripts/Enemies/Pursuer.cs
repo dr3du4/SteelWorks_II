@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pursuer : Enemy
 {
     Kid target;
+    KidData targetData;
     int targetId;
     DepositController depositToLoot = null;
 
@@ -60,7 +61,7 @@ public class Pursuer : Enemy
                     
                     foreach(DepositController deposit in FindObjectsOfType<DepositController>())
                     {
-                        if (deposit.WorkerInDeposit(target))
+                        if (deposit.WorkerInDeposit(target.GetKidData()))
                         {
                             targetPutToWork = true;
                             depositToLoot = deposit;
@@ -73,7 +74,7 @@ public class Pursuer : Enemy
 
                         if (!target)
                         {
-                            target = SelectRandomTarget();
+                            targetData = SelectRandomTarget();
                             targetId = target.playerId;
                         }
 
@@ -90,7 +91,7 @@ public class Pursuer : Enemy
                     {
                         // KILLL
                         escaping = true;
-                        depositToLoot.KidnapWorker(target);
+                        depositToLoot.KidnapWorker(target.GetKidData());
                         target = null;
                         targetId = -1;
                         nextStartPoint = startPoints[Random.Range(0, startPoints.Count)];
@@ -116,7 +117,7 @@ public class Pursuer : Enemy
         }
     }
 
-    private Kid SelectRandomTarget()
+    private KidData SelectRandomTarget()
     {
         return kidsMaster.GetRandomKid();
     }
