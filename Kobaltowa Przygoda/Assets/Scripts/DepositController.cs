@@ -48,6 +48,9 @@ public class DepositController : SerializedMonoBehaviour
 
     void Excavate()
     {
+        if (minerCount == 0)
+            isMining = false;
+
         if (currentMinePoints < requiredMinePoints)
             currentMinePoints += minerCount * defaultExcavateRate;
         else
