@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class Kid : MonoBehaviour {
     private NavMeshAgent agent;
     [SerializeField] private Transform player = null;
-    private Rigidbody2D rb;
     public bool isFollow = false;
     public float maxDistance = 3f;
     public float movementSpeed = 4f;
