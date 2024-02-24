@@ -8,6 +8,8 @@ public class SoundSource : MonoBehaviour
     private void Start()
     {
         _audio = GetComponent<AudioSource>();
+        if (PlayerPrefs.HasKey("Volume")) _audio.volume = PlayerPrefs.GetFloat("Volume");
+        else PlayerPrefs.SetFloat("Volume",1f);
     }
 
     // Update is called once per frame
