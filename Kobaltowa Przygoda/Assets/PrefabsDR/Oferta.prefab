@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 6402548953395067194}
   - component: {fileID: 1238340428865397941}
   - component: {fileID: 1636491082286407869}
+  - component: {fileID: 2641145969425365963}
   m_Layer: 5
   m_Name: Oferta
   m_TagString: Untagged
@@ -259,6 +260,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2641145969425365963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3204038637962118421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f7c8e7922afd0499e1f5b22d9068ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRepetative: 0
+  price: 0
+  priceText: {fileID: 595168487603314175}
+  kobaltowyManager: {fileID: 0}
 --- !u!1 &3928053730774415308
 GameObject:
   m_ObjectHideFlags: 0
