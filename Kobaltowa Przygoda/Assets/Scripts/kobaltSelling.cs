@@ -26,7 +26,7 @@ public class kobaltSelling : MonoBehaviour
         
             if (eq != null)
             {
-                kobaltWPlecaku = plecak.kobalAmount;
+                kobaltWPlecaku = plecak.cobaltTotal;
                 coinyWPlecaku = plecak.money;
 
                 kurs = (Random.Range(212, 482)) / 100f;
