@@ -144,12 +144,12 @@ public class KidsMaster : SerializedMonoBehaviour
     {
         if(allKids.Count > 0)
             return allKids[Random.Range(0, allKids.Count)];
-
+        /*
         foreach(DepositController deposit in FindObjectsOfType<DepositController>())
         {
             if(deposit.GetWorkerCount() > 0)
                 return deposit.GetRandomWorker();
-        }
+        }*/
         return null;
     }
 
