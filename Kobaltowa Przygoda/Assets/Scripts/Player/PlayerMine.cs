@@ -45,6 +45,7 @@ public class PlayerMine : MonoBehaviour
             (int gatheredCobalt, List<Kid> returnedMiners) = deposit.StopExcavation();
             totalCobalt += gatheredCobalt;
             //minerCount += returnedMiners;
+            Debug.Log(returnedMiners.Count);
             kidsMaster.ReturnKids(returnedMiners);
             minerAssignPanel.SetVisibility(true);
         }
@@ -55,7 +56,7 @@ public class PlayerMine : MonoBehaviour
 
             if (minerCount >= minerDesignation && minerDesignation > 0)
             {
-                deposit.BeginExcavation(minerDesignation, kidsMaster.RemoveKids(minerDesignation));
+                deposit.BeginExcavation(kidsMaster.RemoveKids(minerDesignation));
                 //minerCount -= minerDesignation;
                 minerAssignPanel.SetVisibility(false);
             }
