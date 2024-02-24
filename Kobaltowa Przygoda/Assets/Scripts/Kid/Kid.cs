@@ -11,6 +11,11 @@ public class Kid : MonoBehaviour {
     public float maxDistance = 3f;
     public float movementSpeed = 4f;
     private Vector3 _direction;
+    
+    public float efficiency;
+    public float hungry;
+    public float speed;
+    
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
     }
