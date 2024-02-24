@@ -5,6 +5,19 @@ using UnityEngine;
 public class backpack : MonoBehaviour
 {
     public float money;
-    public int kobalAmount;
-    
+    public int cobaltTotal;
+
+    [SerializeField] private IngotAnim anim;
+
+
+    public void DeliverCobalt(Kid k)
+    {
+        if(k.holdCobalt > 0)
+        {
+            cobaltTotal += k.holdCobalt;
+            k.holdCobalt = 0;
+            anim.PlayAnim();
+        }
+    }
+
 }

@@ -44,6 +44,9 @@ public class Kid : MonoBehaviour {
                 agent.SetDestination(player.position);
             }
         } 
+
+        if(Vector2.Distance(transform.position, DayManager.Instance.transform.position) <= DayManager.Instance.deliverRange)
+            DayManager.Instance.GetComponent<backpack>().DeliverCobalt(this);
     }
     
     public void StartFollowing() {
