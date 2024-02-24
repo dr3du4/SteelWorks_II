@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Kobaltowa Przygoda/Assets/TextMesh Pro.meta
+guid: e460c9e150dc86b4db28e4df7d4d5f5d
+folderAsset: yes
+========
 guid: 26bb1515289493e4b97820634f267fd9
+>>>>>>>> main:Kobaltowa Przygoda/Assets/Scenes/Dev/mapka.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
