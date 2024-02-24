@@ -11,13 +11,20 @@ public class Kid : MonoBehaviour {
     public float maxDistance = 3f;
     public float movementSpeed = 4f;
     private Vector3 _direction;
+
+
+    static int playerCount;
+    public int playerId;
+
     
     public float efficiency;
     public float hungry;
     public float speed;
-    
+
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
+        playerId = playerCount;
+        playerCount++;
     }
     
     private void Update() {
@@ -38,5 +45,17 @@ public class Kid : MonoBehaviour {
     public void StopFollowing(Vector2 target) {
         isFollow = false;
         agent.SetDestination(target);
+    }
+
+    public Transform GetPlayer()
+    {
+        return player;
+    }
+
+    public void CopyDataFromKid(Kid k)
+    {
+        // Copy data
+        player = k.GetPlayer();
+        playerId = k.playerId;
     }
 }
