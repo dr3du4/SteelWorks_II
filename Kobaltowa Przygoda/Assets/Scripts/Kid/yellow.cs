@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class yellow : Kid
 { 
-    
-    public float efficiency = 1.2f;
-    public float hungry = 8;
-    public float speed = 1.75f;
+ 
+    void Start()
+    {
+         
+        efficiency = 1.2f;
+        hungry = 8;
+        speed = 1.75f;
+        ladownsc = 0.8f;
+    }
 }
