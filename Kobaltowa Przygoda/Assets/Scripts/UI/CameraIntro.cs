@@ -16,7 +16,7 @@ public class CameraIntro : MonoBehaviour {
     }
     private void Update() {
         introTimer += Time.deltaTime;
-        while (introTimer < zoomOutTime) {
+        if (introTimer < zoomOutTime) {
             transform.position = Vector3.Lerp(start, target, introTimer / zoomOutTime);
             _camera.orthographicSize = Mathf.Lerp(5f, 15f, introTimer / zoomOutTime);
         }
