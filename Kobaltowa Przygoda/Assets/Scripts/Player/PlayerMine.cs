@@ -55,9 +55,8 @@ public class PlayerMine : MonoBehaviour
 
             if (minerCount >= minerDesignation && minerDesignation > 0)
             {
-                deposit.BeginExcavation(minerDesignation);
+                deposit.BeginExcavation(minerDesignation, kidsMaster.RemoveKids(minerDesignation));
                 //minerCount -= minerDesignation;
-                kidsMaster.RemoveKids(minerDesignation);
                 minerAssignPanel.SetVisibility(false);
             }
         }

@@ -21,14 +21,14 @@ public class DepositController : SerializedMonoBehaviour
 
     private int currentMinePoints = 0;
 
-    [Space(5)]
-    [Title("Debug")]
-    [ReadOnly] [ShowInInspector] int cobalt = 0;
+    
     private int excavatedCobalt = 0;
 
     [Space(5)]
     [Title("Debug")]
     [SerializeField] [ReadOnly] private int minerCount = 0;
+    [SerializeField] [ReadOnly] int cobalt = 0;
+    [SerializeField] [ReadOnly] List<Kid> miners = new();
     private int miningSpeed = 0;
     private int efficiencyRate = 0;
 
@@ -76,17 +76,18 @@ public class DepositController : SerializedMonoBehaviour
     }
 
 
-    void UpdateRates(int minerCount, int efficiencyRate)
+    void UpdateRates(int excavateSpeed, int efficiencyRate)
     {
-        miningSpeed = minerCount * excavateSpeedModifier;
+        miningSpeed = this.minerCount * excavateSpeed;
         this.efficiencyRate = efficiencyRate;
     }
 
-    public void BeginExcavation(int minerCount)
+    public void BeginExcavation(int minerCount, List<Kid> newWorker) // Add List<Kid> as argument (so we can store kids)
     {
+        miners = newWorker;
         isMining = true;
         this.minerCount = minerCount;
-        UpdateRates(this.minerCount, defaultEfficiencyRate);
+        UpdateRates(excavateSpeedModifier, defaultEfficiencyRate);
         depositUI.SetMaxValue(requiredMinePoints);
     }
 
@@ -100,11 +101,22 @@ public class DepositController : SerializedMonoBehaviour
         return (retCobalt, retMiner);
     }
 
-    public int KidnapWorker()
+    public Kid KidnapWorker(Kid k)
     {
         minerCount--;
-        UpdateRates(minerCount, defaultEfficiencyRate);
-        return 1;
+        UpdateRates(1, defaultEfficiencyRate);
+        Kid ret = miners.Find(a=> a == k);
+        miners.Remove(k);
+        return ret;
+    }
+
+    public Kid KidnapWorker()
+    {
+        minerCount--;
+        UpdateRates(excavateSpeedModifier, defaultEfficiencyRate);
+        Kid k = miners[miners.Count - 1];
+        miners.RemoveAt(miners.Count - 1);
+        return k;
     }
 
     public void DestroyDeposit()
@@ -112,6 +124,13 @@ public class DepositController : SerializedMonoBehaviour
         isMining = true;
         UpdateRates(0, 0);
         // Yeet children, destroy deposit object (set active false), give children cobalt
+    }
+
+    public bool WorkerInDeposit(Kid k)
+    {
+        if (miners.Contains(k))
+            return true;
+        return false;
     }
 
     public bool MiningStatus()
@@ -123,5 +142,12 @@ public class DepositController : SerializedMonoBehaviour
     public int GetWorkerCount()
     {
         return minerCount;
+    }
+
+    public Kid GetRandomWorker()
+    {
+        if (GetWorkerCount() > 0)
+            return miners[Random.Range(0, miners.Count)];
+        return null;
     }
 }
