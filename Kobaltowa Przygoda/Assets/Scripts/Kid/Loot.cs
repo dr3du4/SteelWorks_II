@@ -25,6 +25,7 @@ public class Loot : MonoBehaviour {
     
     private void AddKobalt(int k) {
         Debug.Log("KOBALT");
+        Debug.Log(k);
     }
 
     private void AddItem() {
