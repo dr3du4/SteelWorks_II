@@ -7,7 +7,11 @@ public abstract class Enemy : MonoBehaviour
 {
     protected NavMeshAgent agent;
     public float activateTimer = 15f;
+    public float stunTime = 2.5f;
     public float detectionRange = 10f;
+    public float kidnapRange = 1.5f;
+    protected bool aiOn = false;
+
 
     protected List<GameObject> workers = new();
     protected List<DepositController> cobaltDeposits = new();
@@ -23,16 +27,24 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    private void Update()
+
+
+    protected virtual void BeginBehaviour() 
+    {
+        aiOn = true;
+    }
+    public abstract int RetrieveWorkers();
+
+    protected bool Setup()
     {
         if (Time.time > activateTimer)
+        {
+            FetchAllWorkers();
             BeginBehaviour();
-
-        FetchAllWorkers();
+            return true;
+        }
+        return false;
     }
-
-    protected abstract void BeginBehaviour();
-
 
     protected virtual void FetchAllWorkers()
     {
@@ -71,5 +83,33 @@ public abstract class Enemy : MonoBehaviour
         if(Vector2.Distance(transform.position, closestDistance) <= detectionRange)
             return closestDeposit;
         return null;
+    }
+
+    protected (Transform, TargetType) GetTarget()
+    {
+        GameObject closestWorker = FindClosestWorker();
+        DepositController closestDepositWorker = FindClosestDepositWithWorker();
+
+        if (closestWorker && !closestDepositWorker)
+            return (closestWorker.transform, TargetType.WORKER);
+
+        if (!closestWorker && closestDepositWorker)
+            return (closestDepositWorker.transform, TargetType.DEPOSIT_WORKER);
+
+        if (closestWorker && closestDepositWorker)
+        {
+            if (Vector2.Distance(transform.position, closestWorker.transform.position) > Vector2.Distance(transform.position, closestDepositWorker.transform.position))
+                return (closestDepositWorker.transform, TargetType.DEPOSIT_WORKER);
+            else
+                return (closestWorker.transform, TargetType.WORKER);
+        }
+        return (null, TargetType.NONE);
+    }
+
+    public enum TargetType
+    {
+        WORKER,
+        DEPOSIT_WORKER,
+        NONE
     }
 }

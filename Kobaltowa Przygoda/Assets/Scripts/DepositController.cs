@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
-public class DepositController : MonoBehaviour
+public class DepositController : SerializedMonoBehaviour
 {
     static public float tickRate = 0.3f;
     private float tickTimer = 0f;
@@ -14,14 +15,16 @@ public class DepositController : MonoBehaviour
 
 
     [Space(5)]
-    [Header("UI")]
+    [Title("UI")]
     [SerializeField] private DepositUI depositUI;
 
     private int currentMinePoints = 0;
 
     private int excavatedCobalt = 0;
 
-    private int minerCount = 0;
+    [Space(5)]
+    [Title("Debug")]
+    [ShowInInspector] [ReadOnly] private int minerCount = 0;
     private int efficiencyRate = 0;
 
     bool isMining = false;
@@ -78,6 +81,13 @@ public class DepositController : MonoBehaviour
         excavatedCobalt = 0;
         depositUI.UpdateExcavatedCobalt(excavatedCobalt);
         return (retCobalt, retMiner);
+    }
+
+    public int KidnapWorker()
+    {
+        minerCount--;
+        UpdateRates(minerCount, defaultEfficiencyRate);
+        return 1;
     }
 
     public bool MiningStatus()
