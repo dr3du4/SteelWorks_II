@@ -23,6 +23,7 @@ public class DepositController : SerializedMonoBehaviour
 
     
     private int excavatedCobalt = 0;
+    private int excavationLimit = 0;
 
     [Space(5)]
     [Title("Debug")]
@@ -32,6 +33,7 @@ public class DepositController : SerializedMonoBehaviour
     private int efficiencyRate = 0;
 
     bool isMining = false;
+    public bool depositDepleted = false;
 
 
     private void Awake()
@@ -64,16 +66,44 @@ public class DepositController : SerializedMonoBehaviour
         {
             currentMinePoints = 0;
             excavatedCobalt += efficiencyRate;
+
+            if (excavatedCobalt >= excavationLimit)
+            {
+                // Can't collect any more cobalt
+                isMining = true;
+                UpdateRates(0, 0);
+                DispenseCobalt();
+            }
+
             cobalt--;
-            miners[Random.Range(0, miners.Count - 1)].holdCobalt++;
+            //miners[Random.Range(0, miners.Count - 1)].holdCobalt++;
             depositUI.UpdateExcavatedCobalt(excavatedCobalt);
         }
 
         if(cobalt == 0)
         {
+            DispenseCobalt();
             DestroyDeposit();
         }
         depositUI.UpdateExcavationProgress(currentMinePoints);
+    }
+
+    void DispenseCobalt()
+    {
+        foreach (Kid k in miners)
+        {
+            int diff = k.maxCobalt - k.holdCobalt;
+            if (diff <= excavatedCobalt)
+            {
+                k.holdCobalt = k.maxCobalt;
+                excavatedCobalt -= diff;
+            }
+            else
+            {
+                k.holdCobalt += excavatedCobalt;
+                excavatedCobalt = 0;
+            }
+        }
     }
 
 
@@ -86,10 +116,12 @@ public class DepositController : SerializedMonoBehaviour
     public void BeginExcavation(List<Kid> newWorker) 
     {
         miners.Clear();
-
+        excavationLimit = 0;
+        
         foreach(Kid k in newWorker)
         {
             miners.Add(k);
+            excavationLimit += k.maxCobalt - k.holdCobalt;
             k.BeginMining(transform.position);
         }
         isMining = true;
@@ -101,6 +133,7 @@ public class DepositController : SerializedMonoBehaviour
     {
         isMining = false;
         int retCobalt = excavatedCobalt;
+        DispenseCobalt();
         List<Kid> retMiner = new();
         foreach (Kid k in miners)
         {
@@ -135,6 +168,7 @@ public class DepositController : SerializedMonoBehaviour
     {
         isMining = true;
         UpdateRates(0, 0);
+        depositDepleted = true;
         // Yeet children, destroy deposit object (set active false), give children cobalt
     }
 

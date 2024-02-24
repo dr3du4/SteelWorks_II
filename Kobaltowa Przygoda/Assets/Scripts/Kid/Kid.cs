@@ -22,14 +22,23 @@ public class Kid : MonoBehaviour {
     public float hungry;
     public float speed;
     public float ladownsc;
+
+    public int maxCobalt = 0;
     
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
         playerId = playerCount;
+
+        if (ladownsc == 0)
+            maxCobalt = 5;
+
         playerCount++;
     }
     
     private void Update() {
+        if(maxCobalt == 0)
+            maxCobalt = (int)(5 * ladownsc);
+
         if (isFollow && !isMining) {
             if (Vector3.Distance(player.position, transform.position) > maxDistance) {
                 agent.SetDestination(player.position);

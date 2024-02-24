@@ -37,6 +37,9 @@ public class BasicEnemy : Enemy
             IgnoreTargets(pursuitEndCooldown);
         }
 
+        if (stunned)
+            agent.ResetPath();
+
         if (aiOn && !stunned)
         {
             if (chasing && target && !kidnapping)

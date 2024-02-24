@@ -38,7 +38,13 @@ public class KidsMaster : SerializedMonoBehaviour
             allKids = FetchAllKids();
 
         playerMine.minerCount = followingKids.Count;
-
+        playerMine.totalCobalt = 0;
+        playerMine.maxHeldCobalt = 0;
+        foreach(Kid k in followingKids)
+        {
+            playerMine.totalCobalt += k.holdCobalt;
+            playerMine.maxHeldCobalt += k.maxCobalt;
+        }
 
         kidsInRange = UpdateKidsInRange();
 
