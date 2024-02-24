@@ -21,14 +21,14 @@ public class DepositController : MonoBehaviour
 
     private int excavatedCobalt = 0;
 
-    private int minerCount = 1;
-    private int efficiencyRate = 1;
+    private int minerCount = 0;
+    private int efficiencyRate = 0;
 
     bool isMining = false;
 
     private void Start()
     {
-        UpdateRates(defaultExcavateRate, defaultEfficiencyRate);
+        UpdateRates(0, defaultEfficiencyRate);
         depositUI.SetMaxValue(requiredMinePoints);
         depositUI.UpdateExcavationProgress(0);
         depositUI.UpdateExcavatedCobalt(0);
@@ -46,7 +46,7 @@ public class DepositController : MonoBehaviour
     void Excavate()
     {
         if (currentMinePoints < requiredMinePoints)
-            currentMinePoints += minerCount;
+            currentMinePoints += minerCount * defaultExcavateRate;
         else
         {
             currentMinePoints = 0;
@@ -85,4 +85,9 @@ public class DepositController : MonoBehaviour
         return isMining;
     }
 
+
+    public int GetWorkerCount()
+    {
+        return minerCount;
+    }
 }
