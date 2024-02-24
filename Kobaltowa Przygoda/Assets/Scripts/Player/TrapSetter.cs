@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrapSetter : MonoBehaviour
 {
-    public,, int selectedTrapLevel = 1;
+    public int selectedTrapLevel = 1;
     [SerializeField] private GameObject trap;
     [SerializeField] private List<int> trapReg = new();
 
