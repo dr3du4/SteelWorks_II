@@ -6,7 +6,6 @@ public class BasicEnemy : Enemy
 {
     [SerializeField] private float pursuitEndCooldown = 7f;
     private float pursuitEndedTimer = 0f;
-    private float stunTimer = 0f;
 
     [SerializeField] float normalSpeed = 5f;
     [SerializeField] float kidnapSpeed = 2.5f;
@@ -19,10 +18,10 @@ public class BasicEnemy : Enemy
     private Transform target;
     private TargetType currentTargetType;
 
-    bool stunned = false;
+    
     bool chasing = false;
     bool kidnapping = false;
-    int carriedWorkers = 0;
+    List<Kid> carriedWorkers = new();
 
     private void Update()
     {
@@ -59,10 +58,11 @@ public class BasicEnemy : Enemy
                     // Kidnap worker
                     kidnapping = true;
                     if (currentTargetType == TargetType.DEPOSIT_WORKER)
-                        carriedWorkers += target.GetComponent<DepositController>().KidnapWorker();
+                        carriedWorkers.Add(target.GetComponent<DepositController>().KidnapWorker());
                     else if (currentTargetType == TargetType.WORKER)
                     {
-                        carriedWorkers += 1;
+                        Kid k = target.gameObject.GetComponent<Kid>();
+                        carriedWorkers.Add(k);
                         kidsMaster.DestroyChild(target.gameObject.GetComponent<Kid>());
                     }
                 }
@@ -78,7 +78,7 @@ public class BasicEnemy : Enemy
                     // kidnapping done
                     Debug.Log("kidnapping done");
                     IgnoreTargets(pursuitEndCooldown);
-                    carriedWorkers = 0;
+                    carriedWorkers = new();
                 }
             }
             else
@@ -105,19 +105,16 @@ public class BasicEnemy : Enemy
         }
     }
 
-    public override int RetrieveWorkers()
+    public override List<Kid> RetrieveWorkers()
     {
-        int retVal = carriedWorkers;
-        carriedWorkers = 0;
+        List<Kid> retVal = carriedWorkers;
+        carriedWorkers = new();
+        Debug.Log(retVal.Count);
         IgnoreTargets(pursuitEndCooldown);
-        return retVal;
+        return new List<Kid>(carriedWorkers);
     }
 
-    public void StunEnemy(int stunLevel)
-    {
-        stunTimer = Time.time + (stunTime * stunLevel);
-        stunned = true;
-    }
+    
 
     private void IgnoreTargets(float time)
     {
