@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CobaltDeposit
   - Kid
+  - Enemy
   layers:
   - Default
   - TransparentFX
