@@ -27,6 +27,7 @@ public class hungryManager : MonoBehaviour
       // Wyświetl liczbę obiektów KID w konsoli
       Debug.Log("Liczba obiektów KID z innego skryptu: " + kids.Count);
       StartCoroutine(HungryCountdown());
+      
    }
 
    private void Update()

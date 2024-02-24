@@ -120,22 +120,20 @@ public class KidsMaster : SerializedMonoBehaviour
     {
         for(int i=0; i<returnedKids; i++)
         {
-            Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f)), transform.rotation).GetComponent<Kid>();
+            Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f),0f), transform.rotation).GetComponent<Kid>();
             allKids.Add(k);
             followingKids.Add(k);
             k.StartFollowing();
         }
     }
 
-    public Kid DestroyChild(Kid k, bool kill=false)
+    public Kid DestroyChild(Kid k)
     {
         allKids.Remove(k);
         followingKids.Remove(k);
         Kid ret = k;
-        if (kill) {
-            Loot l = Instantiate(lootPrefab, ret.transform.position, ret.transform.rotation).GetComponent<Loot>();
-            //l.kobalt
-        }
+        Loot l = Instantiate(lootPrefab, ret.transform.position, ret.transform.rotation).GetComponent<Loot>();
+        l.cobalt = k.holdCobalt;
         Destroy(k.gameObject);
         return ret;
     }
