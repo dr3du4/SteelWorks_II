@@ -33,6 +33,7 @@ public class DepositController : SerializedMonoBehaviour
     private int efficiencyRate = 0;
 
     bool isMining = false;
+    public bool depositDepleted = false;
 
 
     private void Awake()
@@ -167,6 +168,7 @@ public class DepositController : SerializedMonoBehaviour
     {
         isMining = true;
         UpdateRates(0, 0);
+        depositDepleted = true;
         // Yeet children, destroy deposit object (set active false), give children cobalt
     }
 
