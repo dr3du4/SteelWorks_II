@@ -68754,6 +68754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PursuerAssembly
       objectReference: {fileID: 0}
+    - target: {fileID: 3328002685519421416, guid: 31252842903c2734f9087a79ee3b1921, type: 3}
+      propertyPath: speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7164181330557749013, guid: 31252842903c2734f9087a79ee3b1921, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.915571
