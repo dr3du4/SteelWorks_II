@@ -48,7 +48,7 @@ public class hungryManager : MonoBehaviour
       avarageHunger = helper / kids.Count;
    }
 
-   void eat(int satiety)
+   public void eat(int satiety)
    {
       avarageHunger += satiety;
    }
