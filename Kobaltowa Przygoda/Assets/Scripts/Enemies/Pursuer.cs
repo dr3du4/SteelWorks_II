@@ -36,6 +36,9 @@ public class Pursuer : Enemy
             stunned = false;
         }
 
+        if (stunned)
+            agent.ResetPath();
+
         if (aiOn && !stunned)
         {
             if (escaping)
