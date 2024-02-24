@@ -57,4 +57,10 @@ public class DayManager : MonoBehaviour
         }
         
     }
+
+    public float GetTime()
+    {
+        Debug.Log(Time.time - (dayTimer - dayLength) - dayLength);
+        return  Time.time - (dayTimer - dayLength) - dayLength;
+    }
 }
