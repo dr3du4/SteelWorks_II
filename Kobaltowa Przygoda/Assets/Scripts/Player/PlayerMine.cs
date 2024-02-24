@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(KidsMaster))]
 public class PlayerMine : MonoBehaviour
 {
     [Header("UI")]
@@ -20,12 +21,15 @@ public class PlayerMine : MonoBehaviour
 
     public int minerCount = 0;
 
+    KidsMaster kidsMaster;
+
     // Probably temporary
     public int totalCobalt = 0;
 
     private void Start()
     {
         minerAssignPanel.SetPlayerMine(this);
+        kidsMaster = GetComponent<KidsMaster>();
     }
 
     private void Update()
@@ -40,7 +44,8 @@ public class PlayerMine : MonoBehaviour
         {
             (int gatheredCobalt, int returnedMiners) = deposit.StopExcavation();
             totalCobalt += gatheredCobalt;
-            minerCount += returnedMiners;
+            //minerCount += returnedMiners;
+            kidsMaster.ReturnKids(returnedMiners);
             minerAssignPanel.SetVisibility(true);
         }
         else
@@ -51,7 +56,8 @@ public class PlayerMine : MonoBehaviour
             if (minerCount >= minerDesignation && minerDesignation > 0)
             {
                 deposit.BeginExcavation(minerDesignation);
-                minerCount -= minerDesignation;
+                //minerCount -= minerDesignation;
+                kidsMaster.RemoveKids(minerDesignation);
                 minerAssignPanel.SetVisibility(false);
             }
         }

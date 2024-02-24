@@ -30,8 +30,7 @@ public class MinerAssignPanel : MonoBehaviour
     public void SetVisibility(bool visibility)
     {
         gameObject.SetActive(visibility);
-        if(playerMine)
-            invalidMinerCountPanel.SetActive(playerMine.minerCount < currentMinerCount);
+        invalidMinerCountPanel.SetActive(playerMine && visibility && playerMine.minerCount < currentMinerCount);
     }
 
     public void SetPivot(Transform pivot)

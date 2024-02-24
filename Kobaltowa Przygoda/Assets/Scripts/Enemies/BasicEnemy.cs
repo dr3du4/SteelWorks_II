@@ -26,6 +26,9 @@ public class BasicEnemy : Enemy
 
     private void Update()
     {
+        if (refreshWorkerList)
+            FetchAllWorkers();
+
         if (!aiOn)
             chasing = Setup();
 
@@ -60,7 +63,7 @@ public class BasicEnemy : Enemy
                     else if (currentTargetType == TargetType.WORKER)
                     {
                         carriedWorkers += 1;
-                        Destroy(target.gameObject);
+                        kidsMaster.DestroyChild(target.gameObject.GetComponent<Kid>());
                     }
                 }
             }
