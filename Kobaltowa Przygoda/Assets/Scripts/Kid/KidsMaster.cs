@@ -120,7 +120,7 @@ public class KidsMaster : SerializedMonoBehaviour
     {
         for(int i=0; i<returnedKids; i++)
         {
-            Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f)), transform.rotation).GetComponent<Kid>();
+            Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f),0f), transform.rotation).GetComponent<Kid>();
             allKids.Add(k);
             followingKids.Add(k);
             k.StartFollowing();
