@@ -34,7 +34,7 @@ public class statsManager : MonoBehaviour
             Kid kidScript = kid.GetComponent<Kid>();
             helper1 += kidScript.speed;
             helper2 += kidScript.efficiency;
-            helper3 += kidScript.ladownosc;
+            helper3 += kidScript.ladownsc;
 
         }
 
