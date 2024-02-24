@@ -51,6 +51,8 @@ public class DepositController : SerializedMonoBehaviour
             tickTimer = Time.time + tickRate;   
             Excavate();
         }
+
+        minerCount = miners.Count;
     }
 
     void Excavate()
@@ -91,11 +93,13 @@ public class DepositController : SerializedMonoBehaviour
         depositUI.SetMaxValue(requiredMinePoints);
     }
 
-    public (int, int) StopExcavation()
+    public (int, List<Kid>) StopExcavation()
     {
         isMining = false;
         int retCobalt = excavatedCobalt;
-        int retMiner = minerCount;
+        List<Kid> retMiner = new(miners);
+        minerCount = 0;
+        miners = new();
         excavatedCobalt = 0;
         depositUI.UpdateExcavatedCobalt(excavatedCobalt);
         return (retCobalt, retMiner);
@@ -128,7 +132,7 @@ public class DepositController : SerializedMonoBehaviour
 
     public bool WorkerInDeposit(Kid k)
     {
-        if (miners.Contains(k))
+        if (miners.Find(a => a.playerId == k.playerId))
             return true;
         return false;
     }

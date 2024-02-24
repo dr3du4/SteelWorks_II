@@ -42,7 +42,7 @@ public class PlayerMine : MonoBehaviour
     {
         if (deposit.MiningStatus())
         {
-            (int gatheredCobalt, int returnedMiners) = deposit.StopExcavation();
+            (int gatheredCobalt, List<Kid> returnedMiners) = deposit.StopExcavation();
             totalCobalt += gatheredCobalt;
             //minerCount += returnedMiners;
             kidsMaster.ReturnKids(returnedMiners);
