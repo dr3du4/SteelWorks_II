@@ -12,8 +12,15 @@ public class Kid : MonoBehaviour {
     public float movementSpeed = 4f;
     private Vector3 _direction;
 
+
     static int playerCount;
     public int playerId;
+
+    
+    public float efficiency;
+    public float hungry;
+    public float speed;
+
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
         playerId = playerCount;

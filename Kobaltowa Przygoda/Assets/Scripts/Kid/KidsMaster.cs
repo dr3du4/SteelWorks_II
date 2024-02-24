@@ -26,7 +26,10 @@ public class KidsMaster : SerializedMonoBehaviour
         allKids = FetchAllKids();
         playerMine = GetComponent<PlayerMine>();
     }
-
+    public List<Kid> KidsList
+    {
+        get { return allKids; }
+    }
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space))
             ReturnKids(2);
