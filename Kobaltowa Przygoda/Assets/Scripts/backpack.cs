@@ -1,30 +1,23 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class backpack : MonoBehaviour
 {
     public float money;
-    public int kobalAmount;
-    public GameObject shop;
+    public int cobaltTotal;
 
-    private void Update()
+    [SerializeField] private IngotAnim anim;
+
+
+    public void DeliverCobalt(Kid k)
     {
-        
-        if (Input.GetKeyDown(KeyCode.L))
+        if(k.holdCobalt > 0)
         {
-            if (shop.active)
-            {
-                shop.SetActive(false);
-                    
-            }
-            else
-            {
-                shop.SetActive(true);
-            }
+            cobaltTotal += k.holdCobalt;
+            k.holdCobalt = 0;
+            anim.PlayAnim();
         }
     }
+
 }

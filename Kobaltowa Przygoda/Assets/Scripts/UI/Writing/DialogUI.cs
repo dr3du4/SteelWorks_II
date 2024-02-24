@@ -8,14 +8,18 @@ public class DialogUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private DialogObject testDialogue;
+    [SerializeField] private DubbingObject testDubbing;
     [SerializeField] private GameObject dialogueBox;
 
+    private AudioSource _audio;
+    
     public bool IsOpen {get; private set; }
     
     private TypewritterEffect typewritterEffect;
 
     private void Start()
     {
+        _audio = GetComponent<AudioSource>();
        // textLabel.text = "Hello!\n This is my new line.";
       // GetComponent<TypewritterEffect>().Run("Hellajhbfiluafiyugflo!\n This is maefahifuhay new line.", textLabel);
         typewritterEffect =GetComponent<TypewritterEffect>();
@@ -34,12 +38,11 @@ public class DialogUI : MonoBehaviour
     private IEnumerator StepThroughDialougeChange(DialogObject dialogueObject)
     {
         //yield return new WaitForSeconds(2);
-
+        _audio.PlayOneShot(testDubbing.GetClip(0));
         foreach (string dialogue in dialogueObject.Dialogue)
         {
             yield return typewritterEffect.Run(dialogue, textLabel);
             yield return new WaitForSeconds(1f);
-
         }
         CloseDialogueBox();
     }

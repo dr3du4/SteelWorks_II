@@ -11,7 +11,9 @@ public class DayManager : MonoBehaviour
     public int depositCount = 20;
     public Transform cobaltSpawnSpotsParent;
     [AssetsOnly] public GameObject cobaltDepositPrefab;
-    
+    public float deliverRange = 3.2f;
+
+    [Title("Debug")]
     [SerializeField] [ReadOnly] float dayTimer = 0f;
     [SerializeField] [ReadOnly] int dayCounter = 0;
 
@@ -54,5 +56,11 @@ public class DayManager : MonoBehaviour
 
         }
         
+    }
+
+    public float GetTime()
+    {
+        Debug.Log(Time.time - (dayTimer - dayLength) - dayLength);
+        return  Time.time - (dayTimer - dayLength) - dayLength;
     }
 }

@@ -23,8 +23,9 @@ public class PlayerMine : MonoBehaviour
 
     KidsMaster kidsMaster;
 
-    // Probably temporary
     public int totalCobalt = 0;
+    public int maxHeldCobalt = 0;
+
 
     private void Start()
     {
@@ -36,6 +37,8 @@ public class PlayerMine : MonoBehaviour
     {
         if (Input.GetKeyDown(depositInteractBind) && currentDeposit != null)
             InteractWithDeposit(currentDeposit);
+
+        
     }
 
     void InteractWithDeposit(DepositController deposit)
@@ -45,19 +48,23 @@ public class PlayerMine : MonoBehaviour
             (int gatheredCobalt, List<Kid> returnedMiners) = deposit.StopExcavation();
             totalCobalt += gatheredCobalt;
             //minerCount += returnedMiners;
+            Debug.Log(returnedMiners.Count);
             kidsMaster.ReturnKids(returnedMiners);
             minerAssignPanel.SetVisibility(true);
         }
         else
         {
-            minerDesignation = minerAssignPanel.GetMinerCountSelection();
-
-
-            if (minerCount >= minerDesignation && minerDesignation > 0)
+            if (!deposit.depositDepleted)
             {
-                deposit.BeginExcavation(minerDesignation, kidsMaster.RemoveKids(minerDesignation));
-                //minerCount -= minerDesignation;
-                minerAssignPanel.SetVisibility(false);
+                minerDesignation = minerAssignPanel.GetMinerCountSelection();
+
+
+                if (minerCount >= minerDesignation && minerDesignation > 0)
+                {
+                    deposit.BeginExcavation(kidsMaster.RemoveKids(minerDesignation));
+                    //minerCount -= minerDesignation;
+                    minerAssignPanel.SetVisibility(false);
+                }
             }
         }
     }
@@ -67,7 +74,7 @@ public class PlayerMine : MonoBehaviour
         if (collision.gameObject.CompareTag("CobaltDeposit"))
         {
             currentDeposit = collision.gameObject.GetComponent<DepositController>();
-            if (currentDeposit && !currentDeposit.MiningStatus())
+            if (currentDeposit && !currentDeposit.MiningStatus() && maxHeldCobalt != totalCobalt && !currentDeposit.depositDepleted)
             {
                 // Show UI for miner count selection
                 minerAssignPanel.SetVisibility(true);

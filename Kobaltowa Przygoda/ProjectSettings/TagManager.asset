@@ -6,7 +6,7 @@ TagManager:
   tags:
   - CobaltDeposit
   - Kid
-  - Sklep
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - 
   - 
   - 
-  - minimapa
+  - 
   - 
   - 
   - 
@@ -41,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Map
+    uniqueID: 2265815531
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Interactables
+    uniqueID: 3584710701
+    locked: 0
+  - name: Characters
+    uniqueID: 4277204401
     locked: 0

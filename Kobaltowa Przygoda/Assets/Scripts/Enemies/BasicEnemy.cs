@@ -37,6 +37,9 @@ public class BasicEnemy : Enemy
             IgnoreTargets(pursuitEndCooldown);
         }
 
+        if (stunned)
+            agent.ResetPath();
+
         if (aiOn && !stunned)
         {
             if (chasing && target && !kidnapping)
@@ -63,7 +66,9 @@ public class BasicEnemy : Enemy
                     {
                         Kid k = target.gameObject.GetComponent<Kid>();
                         carriedWorkers.Add(k);
-                        kidsMaster.DestroyChild(target.gameObject.GetComponent<Kid>());
+                        k.StopMining();
+                        k.FollowMonster(transform);
+                        //kidsMaster.DestroyChild(target.gameObject.GetComponent<Kid>());
                     }
                 }
             }
@@ -78,7 +83,9 @@ public class BasicEnemy : Enemy
                     // kidnapping done
                     Debug.Log("kidnapping done");
                     IgnoreTargets(pursuitEndCooldown);
-                    carriedWorkers = new();
+                    foreach (Kid k in carriedWorkers)
+                        kidsMaster.DestroyChild(k);
+                    carriedWorkers.Clear();
                 }
             }
             else
