@@ -65,6 +65,7 @@ public class DepositController : SerializedMonoBehaviour
             currentMinePoints = 0;
             excavatedCobalt += efficiencyRate;
             cobalt--;
+            miners[Random.Range(0, miners.Count - 1)].holdCobalt++;
             depositUI.UpdateExcavatedCobalt(excavatedCobalt);
         }
 

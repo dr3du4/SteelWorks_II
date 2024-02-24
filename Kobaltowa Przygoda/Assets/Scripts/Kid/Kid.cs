@@ -17,7 +17,7 @@ public class Kid : MonoBehaviour {
     static int playerCount;
     public int playerId;
 
-    
+    public int holdCobalt;
     public float efficiency;
     public float hungry;
     public float speed;

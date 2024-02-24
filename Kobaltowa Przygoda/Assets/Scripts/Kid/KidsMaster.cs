@@ -127,15 +127,13 @@ public class KidsMaster : SerializedMonoBehaviour
         }
     }
 
-    public Kid DestroyChild(Kid k, bool kill=false)
+    public Kid DestroyChild(Kid k)
     {
         allKids.Remove(k);
         followingKids.Remove(k);
         Kid ret = k;
-        if (kill) {
-            Loot l = Instantiate(lootPrefab, ret.transform.position, ret.transform.rotation).GetComponent<Loot>();
-            //l.kobalt
-        }
+        Loot l = Instantiate(lootPrefab, ret.transform.position, ret.transform.rotation).GetComponent<Loot>();
+        l.cobalt = k.holdCobalt;
         Destroy(k.gameObject);
         return ret;
     }
