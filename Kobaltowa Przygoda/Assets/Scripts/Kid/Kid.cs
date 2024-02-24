@@ -15,7 +15,7 @@ public class Kid : MonoBehaviour {
     public float efficiency;
     public float hungry;
     public float speed;
-    
+    public float ladownosc = 1;
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
     }
