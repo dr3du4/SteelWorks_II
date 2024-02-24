@@ -31,7 +31,7 @@ public class hungryManager : MonoBehaviour
 
    private void Update()
    {
-      
+      kids = _KidsMaster.KidsList;
    }
 
    void hungry()
@@ -56,14 +56,23 @@ public class hungryManager : MonoBehaviour
    {
       if (avarageHunger < 0)
       {
+         List<Kid> kidsToRemove = new List<Kid>();
+
          foreach (Kid kid in kids)
          {
             int szansa = Random.Range(1, 100);
-            
-            if(szansa<(- Mathf.FloorToInt(avarageHunger)))
+
+            if(szansa < (-Mathf.FloorToInt(avarageHunger)))
             {
-               _KidsMaster.DestroyChild(kid);
+               kidsToRemove.Add(kid);
             }
+         }
+
+         // Usuń dzieci z oryginalnej listy
+         foreach (Kid kidToRemove in kidsToRemove)
+         {
+            _KidsMaster.DestroyChild(kidToRemove);
+            kids.Remove(kidToRemove);
          }
       }
    }
@@ -73,10 +82,15 @@ public class hungryManager : MonoBehaviour
 
    IEnumerator HungryCountdown()
    {
-         avarageHunger -= 2;
+      while (true) {
+         if (kids.Count > 0)
+         {
+             avarageHunger -=((kids.Count/10));
+         }
+        
          Debug.Log("Aktualna wartość: " + avarageHunger);
-       
+         hungerDeath();
          yield return new WaitForSeconds(1f);
-       
+      }
    }
 }
