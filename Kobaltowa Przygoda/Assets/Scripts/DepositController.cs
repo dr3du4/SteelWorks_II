@@ -86,9 +86,16 @@ public class DepositController : SerializedMonoBehaviour
 
     public void BeginExcavation(int minerCount, List<Kid> newWorker) // Add List<Kid> as argument (so we can store kids)
     {
-        miners = newWorker;
+        miners = new();
+
+        foreach(Kid k in newWorker)
+        {
+            Kid newKid = new();
+            newKid.CopyDataFromKid(k);
+            miners.Add(newKid);
+        }
         isMining = true;
-        this.minerCount = minerCount;
+        this.minerCount = miners.Count;
         UpdateRates(excavateSpeedModifier, defaultEfficiencyRate);
         depositUI.SetMaxValue(requiredMinePoints);
     }

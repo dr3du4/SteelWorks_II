@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 103071585179109732}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 2.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -134,10 +134,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4f5991cda44f54baa55df3da065704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 0
+    SerializedBytes: 030111000000730074006f0072006500640043006f00620061006c007400520061006e00670065002f000000000150000000530079007300740065006d002e00560061006c00750065005400750070006c006500600032005b005b00530079007300740065006d002e0049006e007400330032002c0020006d00730063006f0072006c00690062005d002c005b00530079007300740065006d002e0049006e007400330032002c0020006d00730063006f0072006c00690062005d005d002c0020006d00730063006f0072006c00690062001701050000004900740065006d003100030000001701050000004900740065006d0032000900000005
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   requiredMinePoints: 50
-  defaultExcavateRate: 1
+  excavateSpeedModifier: 1
   defaultEfficiencyRate: 1
   depositUI: {fileID: 3468730577065752210}
+  minerCount: 0
+  cobalt: 0
+  miners: []
 --- !u!1 &1441097643746394901
 GameObject:
   m_ObjectHideFlags: 0
