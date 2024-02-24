@@ -6,18 +6,24 @@ using UnityEngine.AI;
 public class Kid : MonoBehaviour {
     private NavMeshAgent agent;
     [SerializeField] private Transform player = null;
-    private Rigidbody2D rb;
     public bool isFollow = false;
     public float maxDistance = 3f;
     public float movementSpeed = 4f;
     private Vector3 _direction;
+
+
+    static int playerCount;
+    public int playerId;
+
     
     public float efficiency;
     public float hungry;
     public float speed;
-    public float ladownosc = 1;
+
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
+        playerId = playerCount;
+        playerCount++;
     }
     
     private void Update() {
@@ -38,5 +44,17 @@ public class Kid : MonoBehaviour {
     public void StopFollowing(Vector2 target) {
         isFollow = false;
         agent.SetDestination(target);
+    }
+
+    public Transform GetPlayer()
+    {
+        return player;
+    }
+
+    public void CopyDataFromKid(Kid k)
+    {
+        // Copy data
+        player = k.GetPlayer();
+        playerId = k.playerId;
     }
 }

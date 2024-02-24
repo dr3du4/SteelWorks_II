@@ -9,7 +9,8 @@ public class KidsMaster : SerializedMonoBehaviour
 {
     [SerializeField] float kidRange = 1.5f;
     [AssetsOnly] [SerializeField] Transform kidPrefab;
-
+    [AssetsOnly] [SerializeField] Transform lootPrefab;
+    
     [Title("Binds")]
     [SerializeField] private KeyCode leaveKidBind = KeyCode.Q;
     [SerializeField] private KeyCode gatherKidBind = KeyCode.E;
@@ -97,9 +98,23 @@ public class KidsMaster : SerializedMonoBehaviour
         return ret;
     }
 
-    public void ReturnKids(int count)
+    public void ReturnKids(List<Kid> returnedKids)
     {
-        for(int i=0; i<count; i++)
+        foreach(Kid k in returnedKids)
+        {
+            Kid newKid = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f)), transform.rotation).GetComponent<Kid>();
+
+            newKid.CopyDataFromKid(k);
+
+            allKids.Add(newKid);
+            followingKids.Add(newKid);
+            newKid.StartFollowing();
+        }
+    }
+
+    public void ReturnKids(int returnedKids)
+    {
+        for(int i=0; i<returnedKids; i++)
         {
             Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f)), transform.rotation).GetComponent<Kid>();
             allKids.Add(k);
@@ -108,11 +123,15 @@ public class KidsMaster : SerializedMonoBehaviour
         }
     }
 
-    public Kid DestroyChild(Kid k)
+    public Kid DestroyChild(Kid k, bool kill=false)
     {
         allKids.Remove(k);
         followingKids.Remove(k);
         Kid ret = k;
+        if (kill) {
+            Loot l = Instantiate(lootPrefab, ret.transform.position, ret.transform.rotation).GetComponent<Loot>();
+            //l.kobalt
+        }
         Destroy(k.gameObject);
         return ret;
     }
@@ -130,7 +149,10 @@ public class KidsMaster : SerializedMonoBehaviour
         return null;
     }
 
-
+    public Kid FindKidById(int id)
+    {
+        return allKids.Find(a => a.playerId == id);
+    }
 
     /*
     private void OnTriggerEnter2D(Collider2D other) {
