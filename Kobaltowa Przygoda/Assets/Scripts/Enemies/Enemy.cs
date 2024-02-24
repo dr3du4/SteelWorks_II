@@ -7,11 +7,15 @@ public abstract class Enemy : MonoBehaviour
 {
     protected NavMeshAgent agent;
     protected KidsMaster kidsMaster;
+    protected PlayerMine playerMine;
     public float activateTimer = 15f;
     public float stunTime = 2.5f;
     public float detectionRange = 10f;
     public float kidnapRange = 1.5f;
     protected bool aiOn = false;
+    protected bool stunned = false;
+    protected float stunTimer = 0f;
+
 
     protected bool refreshWorkerList = false;
 
@@ -23,6 +27,7 @@ public abstract class Enemy : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         kidsMaster = FindObjectOfType<KidsMaster>();
+        playerMine = GetComponent<PlayerMine>();
         activateTimer += Time.time;
 
         foreach(GameObject depositObject in GameObject.FindGameObjectsWithTag("CobaltDeposit"))
@@ -37,7 +42,7 @@ public abstract class Enemy : MonoBehaviour
     {
         aiOn = true;
     }
-    public abstract int RetrieveWorkers();
+    public abstract List<Kid> RetrieveWorkers();
 
     protected bool Setup()
     {
@@ -115,6 +120,12 @@ public abstract class Enemy : MonoBehaviour
                 return (closestWorker.transform, TargetType.WORKER);
         }
         return (null, TargetType.NONE);
+    }
+
+    public void StunEnemy(int stunLevel)
+    {
+        stunTimer = Time.time + (stunTime * stunLevel);
+        stunned = true;
     }
 
     public enum TargetType
