@@ -9,7 +9,10 @@ public class PlayerMine : MonoBehaviour
 
     [Space(5)]
     [Header("Binds")]
-    public static KeyCode depositInteractBind = KeyCode.E;
+    public KeyCode depositInteractBind = KeyCode.E;
+
+    [Space(5)]
+    [Header("Helper")]
 
 
     DepositController currentDeposit = null;
@@ -20,6 +23,10 @@ public class PlayerMine : MonoBehaviour
     // Probably temporary
     public int totalCobalt = 0;
 
+    private void Start()
+    {
+        minerAssignPanel.SetPlayerMine(this);
+    }
 
     private void Update()
     {
@@ -39,7 +46,9 @@ public class PlayerMine : MonoBehaviour
         else
         {
             minerDesignation = minerAssignPanel.GetMinerCountSelection();
-            if(minerCount >= minerDesignation && minerDesignation > 0)
+
+
+            if (minerCount >= minerDesignation && minerDesignation > 0)
             {
                 deposit.BeginExcavation(minerDesignation);
                 minerCount -= minerDesignation;
