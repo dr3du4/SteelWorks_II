@@ -9,7 +9,8 @@ public class KidsMaster : SerializedMonoBehaviour
 {
     [SerializeField] float kidRange = 1.5f;
     [AssetsOnly] [SerializeField] Transform kidPrefab;
-
+    [AssetsOnly] [SerializeField] Transform lootPrefab;
+    
     [Title("Binds")]
     [SerializeField] private KeyCode leaveKidBind = KeyCode.Q;
     [SerializeField] private KeyCode gatherKidBind = KeyCode.E;
@@ -108,11 +109,15 @@ public class KidsMaster : SerializedMonoBehaviour
         }
     }
 
-    public Kid DestroyChild(Kid k)
+    public Kid DestroyChild(Kid k, bool kill=false)
     {
         allKids.Remove(k);
         followingKids.Remove(k);
         Kid ret = k;
+        if (kill) {
+            Loot l = Instantiate(lootPrefab, ret.transform.position, ret.transform.rotation).GetComponent<Loot>();
+            //l.kobalt
+        }
         Destroy(k.gameObject);
         return ret;
     }
