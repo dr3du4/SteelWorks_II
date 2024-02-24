@@ -15,7 +15,11 @@ public class SliderTimer : MonoBehaviour
     }
     private void Update()
     {
-        timer += Time.deltaTime;
-        s.value = timer/DayManager.Instance.dayLength;
+        
+        if(s.maxValue != DayManager.Instance.dayLength)
+            s.maxValue = DayManager.Instance.dayLength;
+
+        
+        s.value = DayManager.Instance.GetTime();
     }
 }
