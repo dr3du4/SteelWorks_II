@@ -17,6 +17,8 @@ public class DayManager : MonoBehaviour
     [SerializeField] [ReadOnly] float dayTimer = 0f;
     [SerializeField] [ReadOnly] int dayCounter = 0;
 
+
+    // Przepinanie obiektu "cobaltSpawnSpots" przy zmianie mapy
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -33,12 +35,19 @@ public class DayManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
             StartDay();
+
+        dayTimer += Time.deltaTime;
+
+        if(dayTimer >= dayLength)
+        {
+            Debug.Log("END OF DAY");
+        }
     }
 
     void StartDay()
     {
         dayCounter++;
-        dayTimer = Time.time + dayLength;
+        dayTimer = 0;
 
         CreateRandomDeposits(depositCount);
     }
@@ -60,7 +69,6 @@ public class DayManager : MonoBehaviour
 
     public float GetTime()
     {
-        Debug.Log(Time.time - (dayTimer - dayLength) - dayLength);
-        return  Time.time - (dayTimer - dayLength) - dayLength;
+        return  dayTimer;
     }
 }

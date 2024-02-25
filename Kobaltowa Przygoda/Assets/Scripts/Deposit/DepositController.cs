@@ -28,6 +28,7 @@ public class DepositController : SerializedMonoBehaviour
     [Space(5)]
     [Title("Debug")]
     [SerializeField] [ReadOnly] int cobalt = 0;
+    private int initialCobalt = 0;
     [SerializeField] [ReadOnly] List<Kid> miners = new();
     private int miningSpeed = 0;
     private int efficiencyRate = 0;
@@ -43,7 +44,8 @@ public class DepositController : SerializedMonoBehaviour
         depositUI.UpdateExcavationProgress(0);
         depositUI.UpdateExcavatedCobalt(0);
 
-        cobalt = Random.Range(storedCobaltRange.Item1, storedCobaltRange.Item2);
+        initialCobalt = Random.Range(storedCobaltRange.Item1, storedCobaltRange.Item2);
+        cobalt = initialCobalt;
     }
     private void Update()
     {
@@ -195,5 +197,10 @@ public class DepositController : SerializedMonoBehaviour
         if (GetWorkerCount() > 0)
             return miners[Random.Range(0, miners.Count)];
         return null;
+    }
+
+    public float GetExcavatedPercentage()
+    {
+        return  (float) cobalt / initialCobalt;
     }
 }
