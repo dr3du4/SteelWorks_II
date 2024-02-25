@@ -33,12 +33,19 @@ public class DayManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
             StartDay();
+
+        dayTimer += Time.deltaTime;
+
+        if(dayTimer >= dayLength)
+        {
+            Debug.Log("END OF DAY");
+        }
     }
 
     void StartDay()
     {
         dayCounter++;
-        dayTimer = Time.time + dayLength;
+        dayTimer = 0;
 
         CreateRandomDeposits(depositCount);
     }
@@ -60,7 +67,6 @@ public class DayManager : MonoBehaviour
 
     public float GetTime()
     {
-        Debug.Log(Time.time - (dayTimer - dayLength) - dayLength);
-        return  Time.time - (dayTimer - dayLength) - dayLength;
+        return  dayTimer;
     }
 }

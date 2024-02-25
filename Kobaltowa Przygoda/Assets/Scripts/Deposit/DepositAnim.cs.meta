@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bb83386741196f6478530884655474c0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fullDeposit: {fileID: 21300000, guid: fb90ec3e4c1582744980312fcd275f50, type: 3}
+  - excavatingDeposit: {fileID: 21300000, guid: 923b88f01c6ab6e439cca305fba7151b, type: 3}
+  - excavatingDeposit2: {fileID: 21300000, guid: 631291dbeb747ec428b37b9cae9d5252, type: 3}
+  - excavatedDeposit: {fileID: 21300000, guid: 15066c6d38143b249838cfb44e371549, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
