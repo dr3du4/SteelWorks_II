@@ -181,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b83a1becbc2743c4b9ff72c8b288b3b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b42dc4b8249bb08498ad33e4fadf8425, type: 3}
   m_Color: {r: 0.6933962, g: 0.7994323, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 24422093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.18, y: -5.98, z: 0}
+  m_LocalPosition: {x: 17.31, y: -7.9, z: 0}
   m_LocalScale: {x: 2.2652695, y: 2.2652695, z: 0.062795535}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,7 +610,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363902615}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: a06903ee02de6c847a9db06b48e5519b, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: f07197c70c09ddb4f900c12b4a9d6399, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -731,8 +731,8 @@ Transform:
   m_GameObject: {fileID: 726447272}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.40822, y: 1.3379, z: 0.13379}
+  m_LocalPosition: {x: 0.31, y: 0.21, z: 0}
+  m_LocalScale: {x: 2.7980144, y: 1.5348113, z: 0.1476774}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -867,7 +867,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
