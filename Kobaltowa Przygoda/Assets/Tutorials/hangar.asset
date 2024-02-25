@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41d4499e5b4452e4ba3f9b8aa07030b4, type: 3}
-  m_Name: KoniecNieMaJuzNic
+  m_Name: hangar
   m_EditorClassIdentifier: 
-  index: 8
-  title: Koniec dnia
-  background: {fileID: 21300000, guid: 66a4a67b71632304aae7e1a7c9f9da95, type: 3}
-  text: "Na zebranie kobaltu jest ograniczony czas wybuchem jaskini. Czas pozosta\u0142y
-    do wybuchu \u0142adunku widoczny jest w trakcie rozgrywki.\_"
-  nextIndex: 9
+  index: 9
+  title: "Pasek g\u0142odu"
+  background: {fileID: 21300000, guid: 78f6eb31a4cba5140952da19e537bc66, type: 3}
+  text: "Na dole wida\u0107 og\xF3lny poziom g\u0142odu pracownik\xF3w, im wi\u0119kszy
+    poziom, tym wi\u0119ksza szansa, \u017Ce kt\xF3ry\u015B z pracownik\xF3w umrze"
+  nextIndex: -1
