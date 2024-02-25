@@ -25,6 +25,8 @@ public class Pursuer : Enemy
 
     private void Update()
     {
+        if (!TutorialSystem.Instance.tutorialWas(5) && _renderer.isVisible) TutorialSystem.Instance.DisplayTutorial(5);
+        
         if (agent.speed != speed)
             agent.speed = speed;
 
