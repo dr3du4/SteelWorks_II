@@ -13,7 +13,20 @@ public class DayManager : MonoBehaviour
     public float priceChangeTime = 15f;
     public int depositCount = 20;
     public int childCount = 10;
-    public Transform cobaltSpawnSpotsParent;
+
+
+    [Space(5)]
+    [Title("Map setup")]
+    [SerializeField] [SceneObjectsOnly] GameObject map1;
+    [SerializeField] [SceneObjectsOnly] GameObject map2;
+
+    [SerializeField] [SceneObjectsOnly] Transform cobaltSpawnSpotsParent1;
+    [SerializeField] [SceneObjectsOnly] Transform cobaltSpawnSpotsParent2;
+
+
+    Transform cobaltSpawnSpotsParent;
+
+
     [AssetsOnly] public GameObject cobaltDepositPrefab;
     public float deliverRange = 3.2f;
 
@@ -43,6 +56,7 @@ public class DayManager : MonoBehaviour
         TutorialSystem.Instance.DisplayTutorial(0);
         kidsMaster = FindAnyObjectByType<KidsMaster>();
         hungerManager = GetComponent<hungryManager>();
+        cobaltSpawnSpotsParent = cobaltSpawnSpotsParent1;
         StartDay(new(), true);
     }
 
@@ -66,6 +80,23 @@ public class DayManager : MonoBehaviour
 
     void StartDay(List<Kid> safeWorkers, bool firstDay)
     {
+        if (!firstDay)
+        {
+            if (map1.activeSelf)
+            {
+                map1.SetActive(false);
+                map2.SetActive(true);
+                cobaltSpawnSpotsParent = cobaltSpawnSpotsParent2;
+            }
+            else
+            {
+                map2.SetActive(false);
+                map1.SetActive(true);
+                cobaltSpawnSpotsParent = cobaltSpawnSpotsParent1;
+            }
+        }
+
+
         List<Kid> unsafeWorkers = new();
         if(safeWorkers.Count > 0)
         {
@@ -96,13 +127,17 @@ public class DayManager : MonoBehaviour
 
     void CreateRandomDeposits(int count)
     {
+        foreach(DepositController deposit in FindObjectsOfType<DepositController>())
+        {
+            Destroy(deposit.gameObject);
+        }
+
         List<Transform> spawnPoints = new(cobaltSpawnSpotsParent.GetComponentsInChildren<Transform>());
         for(int i=0; i<count; i++)
         {
             int j = Random.Range(0, spawnPoints.Count);
             Transform nextSpawn = spawnPoints[j];
-
-            Instantiate(cobaltDepositPrefab, nextSpawn);
+            Debug.Log(Instantiate(cobaltDepositPrefab, nextSpawn).name);
             spawnPoints.RemoveAt(j);
 
         }
