@@ -9,6 +9,7 @@ public class DayManager : MonoBehaviour
 
     public float dayLength = 180f;
     public int depositCount = 20;
+    public int childCount = 10;
     public Transform cobaltSpawnSpotsParent;
     [AssetsOnly] public GameObject cobaltDepositPrefab;
     public float deliverRange = 3.2f;
@@ -16,6 +17,8 @@ public class DayManager : MonoBehaviour
     [Title("Debug")]
     [SerializeField] [ReadOnly] float dayTimer = 0f;
     [SerializeField] [ReadOnly] int dayCounter = 0;
+
+    private KidsMaster kidsMaster;
 
 
     // Przepinanie obiektu "cobaltSpawnSpots" przy zmianie mapy
@@ -33,6 +36,9 @@ public class DayManager : MonoBehaviour
 
     private void Update()
     {
+        if (!kidsMaster)
+            kidsMaster = FindAnyObjectByType<KidsMaster>();
+
         if (Input.GetKeyDown(KeyCode.L))
             StartDay();
 
@@ -46,6 +52,7 @@ public class DayManager : MonoBehaviour
 
     void StartDay()
     {
+        kidsMaster.SpawnKids(childCount);
         dayCounter++;
         dayTimer = 0;
 
