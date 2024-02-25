@@ -1023,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3256869468036298250, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 3831314783163268861, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1107,6 +1111,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5120218322030465638, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: m_MaxValue
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6108156215196399249, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
       propertyPath: _HungryManager
       value: 
@@ -1114,6 +1122,10 @@ PrefabInstance:
     - target: {fileID: 6206613598289689693, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158339309581609653, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
