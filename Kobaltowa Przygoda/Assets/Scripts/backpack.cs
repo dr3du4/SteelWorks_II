@@ -7,6 +7,7 @@ public class backpack : MonoBehaviour
 {
     public int money;
     public int cobaltTotal;
+    private bool firstthingi =true;
     [SerializeField] private IngotAnim anim;
 
 
@@ -17,6 +18,11 @@ public class backpack : MonoBehaviour
             cobaltTotal += k.holdCobalt;
             k.holdCobalt = 0;
             anim.PlayAnim();
+            
+            if (firstthingi){
+                if (!TutorialSystem.Instance.tutorialWas(7)) TutorialSystem.Instance.DisplayTutorial(7);
+                firstthingi=false;
+            }
         }
     }
     
