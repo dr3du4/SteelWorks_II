@@ -55,7 +55,6 @@ public class backpack : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-            DeliverCobalt(100);
+        
     }
 }

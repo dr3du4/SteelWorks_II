@@ -65,8 +65,7 @@ public class DayManager : MonoBehaviour
         if (!kidsMaster)
             kidsMaster = FindAnyObjectByType<KidsMaster>();
 
-        if (Input.GetKeyDown(KeyCode.L))
-            StartDay(TallySafeWorkers(), true);
+        
 
         dayTimer += Time.deltaTime;
 

@@ -42,8 +42,7 @@ public class KidsMaster : SerializedMonoBehaviour
     private void Update() {
         UpdateClosestKidnapper();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            SpawnKids(2);
+        
         if (refreshKids)
             allKids = FetchAllKids();
 
