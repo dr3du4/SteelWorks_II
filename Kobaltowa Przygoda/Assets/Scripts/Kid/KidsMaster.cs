@@ -129,13 +129,29 @@ public class KidsMaster : SerializedMonoBehaviour
     {
         
         for(int i=0; i<returnedKids; i++)
-        {
+            SpawnSpecificWorker(Random.Range(1, 4));
+    }
 
-            Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f), 0f), transform.rotation).GetComponent<Kid>();
-            allKids.Add(k);
-            followingKids.Add(k);
-            k.StartFollowing();
+    public void SpawnSpecificWorker(int workerType)
+    {
+        switch (workerType)
+        {
+            case 1:
+                kidPrefab = whiteKidPrefab;
+                break;
+            case 2:
+                kidPrefab = yellowKidPrefab;
+                break;
+            case 3:
+                kidPrefab = blackKidPrefab;
+                break;
+
         }
+
+        Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f), 0f), transform.rotation).GetComponent<Kid>();
+        allKids.Add(k);
+        followingKids.Add(k);
+        k.StartFollowing();
     }
 
     public Kid DestroyChild(Kid k)

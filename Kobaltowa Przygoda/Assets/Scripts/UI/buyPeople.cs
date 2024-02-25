@@ -9,6 +9,6 @@ public class buyPeople : MonoBehaviour
     
     public void buySlave()
     {
-        player.SpawnKids(race);
+        player.SpawnSpecificWorker(race);
     }
 }
