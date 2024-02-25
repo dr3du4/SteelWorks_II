@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 1620646966379016815}
   - component: {fileID: 9180491329936257831}
   m_Layer: 0
-  m_Name: Kid_black
+  m_Name: Kid_Black
   m_TagString: Kid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 4484077963551353364}
+  _renderer: {fileID: 5229831321767525900}
 --- !u!114 &9180491329936257831
 MonoBehaviour:
   m_ObjectHideFlags: 0
