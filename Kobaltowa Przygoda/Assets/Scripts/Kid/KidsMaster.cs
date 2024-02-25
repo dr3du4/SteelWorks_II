@@ -128,23 +128,10 @@ public class KidsMaster : SerializedMonoBehaviour
     public void SpawnKids(int returnedKids)
     {
         
-        for(int i=0; i<1; i++)
+        for(int i=0; i<returnedKids; i++)
         {
-            
-            switch (returnedKids)
-            {
-                case 1:
-                    kidPrefab = blackKidPrefab;
-                    break;
-                case 2:
-                    kidPrefab = yellowKidPrefab;
-                    break;
-                case 3:
-                    kidPrefab = blackKidPrefab;
-                    break;
-                    
-            }
-            Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f),0f), transform.rotation).GetComponent<Kid>();
+
+            Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f), 0f), transform.rotation).GetComponent<Kid>();
             allKids.Add(k);
             followingKids.Add(k);
             k.StartFollowing();
@@ -178,6 +165,16 @@ public class KidsMaster : SerializedMonoBehaviour
     public Kid FindKidById(int id)
     {
         return allKids.Find(a => a.playerId == id);
+    }
+
+    public List<Kid> GetFollowingKids()
+    {
+        return followingKids;
+    }
+
+    public List<Kid> GetAllKids()
+    {
+        return allKids;
     }
 
     /*
