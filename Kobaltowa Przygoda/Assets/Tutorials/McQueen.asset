@@ -15,8 +15,7 @@ MonoBehaviour:
   index: 5
   title: "potw\xF3r \u015Bcigacz (pu\u0142apki)"
   background: {fileID: 21300000, guid: e75d718936c1ca8458a5925f2029515a, type: 3}
-  text: "Drugim okazem cz\u0119sto spotykanym w kompleksie jest POTWOR Y, kt\xF3rego
-    le\u017Ce mo\u017Cemy podziwia\u0107 w korytarzach. Potw\xF3r chc\u0105c pokaza\u0107
-    swoje skromne progi zabiera wybranego pracownika do siebie, w trakcie tego, mo\u017Cemy
-    podej\u015B\u0107 do potwora i kulturalnie wyt\u0142umaczy\u0107 mu u\u017Cywaj\u0105c
-    przycisku R, \u017Ce ta osoba aktualnie jest w pracy i musi j\u0105 zostawi\u0107."
+  text: "Niekt\xF3re potwory ci\u0105gn\u0105 pracownik\xF3w do swoich le\u017Cy
+    zanim ich zabij\u0105. Aby przeszkodzi\u0107 mu ,mo\u017Cesz podej\u015B\u0107
+    do niego i zawo\u0142a\u0107 pracownika klawiszem R.\_"
+  nextIndex: -1

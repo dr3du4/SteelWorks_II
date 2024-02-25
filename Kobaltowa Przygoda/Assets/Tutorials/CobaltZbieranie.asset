@@ -15,13 +15,8 @@ MonoBehaviour:
   index: 2
   title: Zbieranie kobaltu
   background: {fileID: 21300000, guid: 95bc8f811138b52458e25051dffa3b70, type: 3}
-  text: "Najciekawszym (z ekonomicznego punktu widzenia) elementem naszego kompleksu
-    s\u0105 minera\u0142y, mianowicie kobalt, je\u015Bli znajdziesz go podczas eksploracji,
-    op\u0142aca si\u0119 zostawi\u0107 cz\u0119\u015B\u0107 naszej dru\u017Cyny \u017Ceby
-    mog\u0142a go zebra\u0107 i zabra\u0107 na powierzchni\u0119. Aby to zrobi\u0107
-    kiedy znajdziesz si\u0119 blisko z\u0142o\u017Ca, zobaczysz mo\u017Cliwo\u015B\u0107
-    wyboru liczby pracownik\xF3w kt\xF3rzy powinni zosta\u0107 przy danym z\u0142o\u017Cu,
-    u\u017Cywaj\u0105c strza\u0142ek, mo\u017Cesz zwi\u0119kszy\u0107, b\u0105d\u017A
-    zmniejszy\u0107 t\u0119 liczb\u0119. \u017Beby zatwierdzi\u0107 liczb\u0119 wci\u015Bnij
-    E. Klawiszu E u\u017Cyjesz r\xF3wnie\u017C aby kiedy sko\u0144cz\u0105, da\u0107
-    im zna\u0107, \u017Ce mog\u0105 znowu i\u015B\u0107 za tob\u0105.\n"
+  text: "Po znalezieniu z\u0142o\u017Ca kobaltu u\u017Cyj strza\u0142ek na klawiaturze
+    i E aby zatwierdzi\u0107 liczb\u0119 pracownik\xF3w do kopania. Wci\u015Bnij
+    ponownie E przy z\u0142o\u017Cu, aby zabra\u0107 pracownik\xF3w z powrotem. Z\u0142o\u017Ca
+    mog\u0105 si\u0119 sko\u0144czy\u0107."
+  nextIndex: -1
