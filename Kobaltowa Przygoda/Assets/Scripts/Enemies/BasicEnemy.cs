@@ -84,8 +84,8 @@ public class BasicEnemy : Enemy
                 foreach(Kid k in carriedWorkers)
                 {
                     if (k == null) continue;
-                    //k.transform.position = transform.position + new Vector3(0, 1f);
-                    k.transform.SetPositionAndRotation(transform.position + new Vector3(0, 1f), Quaternion.Euler(90f, transform.rotation.y, transform.rotation.z));
+                    k.transform.position = transform.position + new Vector3(0, 1f);
+                    //k.transform.SetPositionAndRotation(transform.position + new Vector3(0, 1f), Quaternion.Euler(90f, transform.rotation.y, transform.rotation.z));
                     //k.transform.SetPositionAndRotation(transform.position + new Vector3(0, 0.5f), Quaternion.Euler(0, 0, 180f));
                     //k.transform.rotation.SetEulerAngles();
                     k.GetComponent<NavMeshAgent>().ResetPath();
@@ -126,6 +126,7 @@ public class BasicEnemy : Enemy
         }
     }
 
+
     public override List<Kid> RetrieveWorkers()
     {
         List<Kid> retVal = carriedWorkers;
@@ -154,5 +155,10 @@ public class BasicEnemy : Enemy
         kidnapping = false;
         pursuitEndedTimer = Time.time + time;
         chasing = true;
+    }
+
+    public List<Kid> GetCarriedWorkers()
+    {
+        return carriedWorkers;
     }
 }
