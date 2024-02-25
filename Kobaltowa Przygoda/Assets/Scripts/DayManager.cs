@@ -17,6 +17,8 @@ public class DayManager : MonoBehaviour
     [SerializeField] [ReadOnly] float dayTimer = 0f;
     [SerializeField] [ReadOnly] int dayCounter = 0;
 
+
+    // Przepinanie obiektu "cobaltSpawnSpots" przy zmianie mapy
     private void Awake()
     {
         if(Instance != null && Instance != this)
