@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pursuer : Enemy
 {
+    public Animator _animator;
     Kid target;
     int targetId;
     DepositController depositToLoot = null;
@@ -50,6 +51,7 @@ public class Pursuer : Enemy
 
                 if (agent.remainingDistance <= 0.1f)
                 {
+                    _animator.ResetTrigger("Attack");
                     escaping = false;
                     target = null;
                     targetId = -1;
@@ -91,6 +93,7 @@ public class Pursuer : Enemy
                         if (Vector2.Distance(transform.position, target.transform.position) <= 1f)
                         {
                             // KILLL
+                            _animator.SetTrigger("Attack");
                             escaping = true;
                             kidsMaster.DestroyChild(depositToLoot.KidnapWorker(target));
                             target = null;
@@ -105,6 +108,7 @@ public class Pursuer : Enemy
                         if (Vector2.Distance(transform.position, target.transform.position) <= 1f)
                         {
                             // KILL
+                            _animator.SetTrigger("Attack");
                             escaping = true;
                             kidsMaster.DestroyChild(target);
                             target = null;
