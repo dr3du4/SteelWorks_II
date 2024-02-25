@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class kobaltSelling : MonoBehaviour
 {
-    public float money;
+    public int money;
     public int kobaltAmount;
-    public float kurs = 0;
-    
+    public int kurs = 0;
+    float kursTimer = 0;
+
+    private backpack plecak;
+
     public TMP_Text kursText;
     public TMP_Text moneyText;
     public TMP_Text coinPlecakText;
@@ -21,32 +24,36 @@ public class kobaltSelling : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        backpack plecak = DayManager.Instance.GetComponent<backpack>();
-        
-            if (DayManager.Instance != null)
-            {
-                kobaltWPlecaku = plecak.cobaltTotal;
-                coinyWPlecaku = plecak.money;
-
-                kurs = (Random.Range(212, 482)) / 100f;
-                money = kobaltAmount * kurs;
-
-                kursText.text = kurs.ToString();
-                KobaltPlecakText.text = kobaltWPlecaku.ToString();
-                coinPlecakText.text = coinyWPlecaku.ToString();
-                moneyText.text = money.ToString();
-            }
-            else
-            {
-                Debug.LogError("Nie znaleziono Game Managera na scenie.");
-            }
-        
+        plecak = DayManager.Instance.GetComponent<backpack>();
     }
 
     // Update is called once per frame
     void Update()
     {
-         
+        if (plecak)
+        {
+            kobaltWPlecaku = plecak.cobaltTotal;
+            coinyWPlecaku = plecak.money;
+
+            
+            money = kobaltAmount * kurs;
+
+            kursText.text = kurs.ToString();
+            KobaltPlecakText.text = kobaltWPlecaku.ToString();
+            coinPlecakText.text = coinyWPlecaku.ToString();
+            moneyText.text = money.ToString();
+        }
+
+        if (Time.time >= kursTimer)
+        {
+            kursTimer = Time.time + DayManager.Instance.priceChangeTime;
+            NewKurs();
+        }
+    }
+
+    public void NewKurs()
+    {
+        kurs = (Random.Range(15, 55));
     }
 
     public void updateTrade()
@@ -70,6 +77,7 @@ public class kobaltSelling : MonoBehaviour
     
     public void Buy()
     {
+        /*
        if(kobaltAmount>0)
        { 
              backpack plecak = DayManager.Instance.GetComponent<backpack>();
@@ -84,7 +92,11 @@ public class kobaltSelling : MonoBehaviour
        KobaltPlecakText.text = kobaltWPlecaku.ToString();
        coinPlecakText.text = coinyWPlecaku.ToString();
        moneyText.text = money.ToString();
-
+        */
+        plecak.SellKobalt(kobaltAmount);
+        plecak.AddCash(money);
+        money = 0;
+        kobaltAmount = 0;
 
     }
     public void OddKobaltToSell()

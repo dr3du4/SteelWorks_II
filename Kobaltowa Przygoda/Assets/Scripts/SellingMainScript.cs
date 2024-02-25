@@ -9,26 +9,22 @@ public class SellingMainScript : MonoBehaviour
     public int price;
     public TMP_Text priceText;
 
-    public GameObject eq;
     public TMP_Text moneyAmount;
+
+    backpack eqScript;
 
     private float moneyFromBackpack;
 
     void Start()
     {
         priceText.text = price.ToString();
+        eqScript = DayManager.Instance.GetComponent<backpack>();
     }
 
-    void Update()
-    {
-        
-    }
+    
 
     public void Buy()
     {
-       
-        
-            backpack eqScript = eq.GetComponent<backpack>();
             moneyFromBackpack = eqScript.money;
         Debug.Log("Money in backpack before purchase: " + eqScript.money);
         moneyAmount.text = eqScript.money.ToString();
