@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676457364010301322, guid: 3d792a96edfc28a4ea5e924b4d8e8477, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 87.067444
+      value: 86.817444
       objectReference: {fileID: 0}
     - target: {fileID: 7676457364010301322, guid: 3d792a96edfc28a4ea5e924b4d8e8477, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -818,10 +818,6 @@ PrefabInstance:
     - target: {fileID: 4453863028776709102, guid: affdbf1d4175ce84d97f81c1532a4a08, type: 3}
       propertyPath: m_Name
       value: Map1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4453863028776709102, guid: affdbf1d4175ce84d97f81c1532a4a08, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4606099076703961274, guid: affdbf1d4175ce84d97f81c1532a4a08, type: 3}
       propertyPath: m_LocalPosition.x
