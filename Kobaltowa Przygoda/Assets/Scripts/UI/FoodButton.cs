@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class FoodButton : SellingMainScript
 {
-   public hungryManager _HungryManager;
+   hungryManager _HungryManager;
    public int satiety;
 
-   public void buyFood()
+    private void Start()
+    {
+        _HungryManager = DayManager.Instance.GetComponent<hungryManager>();
+    }
+
+    public void buyFood()
    {
       _HungryManager.eat(satiety);
    }

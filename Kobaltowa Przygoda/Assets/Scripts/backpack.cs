@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class backpack : MonoBehaviour
 {
-    public float money;
+    public int money;
     public int cobaltTotal;
-    public GameObject myObject;
     [SerializeField] private IngotAnim anim;
 
 
@@ -26,11 +25,30 @@ public class backpack : MonoBehaviour
         cobaltTotal += k;
     }
 
+    public bool Purchase(int value)
+    {
+        if (money - value < 0)
+            return false;
+        money -= value;
+        return true;
+    }
+
+    public bool SellKobalt(int amount)
+    {
+        if (cobaltTotal - amount < 0)
+            return false;
+        cobaltTotal -= amount;
+        return true;
+    }
+
+    public void AddCash(int amount)
+    {
+        money += amount;
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
-        {
-            myObject.SetActive(!myObject.activeSelf);
-        }
+            DeliverCobalt(100);
     }
 }
