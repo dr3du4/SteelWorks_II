@@ -14,6 +14,7 @@ public class FoodButton : SellingMainScript
 
     public void buyFood()
    {
+        Debug.Log("EAT: " + satiety.ToString());
       _HungryManager.eat(satiety);
    }
 
