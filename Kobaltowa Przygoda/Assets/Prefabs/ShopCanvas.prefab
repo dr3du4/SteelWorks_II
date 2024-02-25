@@ -3910,11 +3910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 730
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -310
+      value: -730
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4491,6 +4491,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3983260872561441578, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: m_text
+      value: "Ty na prawd\u0119 musisz kocha\u0107 te dzieci jak chcesz to kupi\u0107"
+      objectReference: {fileID: 0}
     - target: {fileID: 5060905686661692893, guid: f4335f000715425409f617cfc98e75a2, type: 3}
       propertyPath: m_Name
       value: Oferta (9)
@@ -4721,11 +4725,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 730
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: -310
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4984,7 +4988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -520
+      value: -940
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5119,7 +5123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -310
+      value: -520
       objectReference: {fileID: 0}
     - target: {fileID: 5202822680942210965, guid: 7228f35df9942f647b289bc978fc83ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5383,6 +5387,10 @@ PrefabInstance:
     - target: {fileID: 2624480550913221484, guid: f4335f000715425409f617cfc98e75a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983260872561441578, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: m_text
+      value: Troszeczke przeszkodzi potworowi w jego codziennych spacerach
       objectReference: {fileID: 0}
     - target: {fileID: 5060905686661692893, guid: f4335f000715425409f617cfc98e75a2, type: 3}
       propertyPath: m_Name
@@ -6344,6 +6352,11 @@ PrefabInstance:
     - target: {fileID: 2624480550913221484, guid: f4335f000715425409f617cfc98e75a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983260872561441578, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: m_text
+      value: "Lepsza ni\u017C mniejsza pu\u0142apka, jak mo\u017Cna si\u0119 by\u0142o
+        domy\u015Bli\u0107"
       objectReference: {fileID: 0}
     - target: {fileID: 5060905686661692893, guid: f4335f000715425409f617cfc98e75a2, type: 3}
       propertyPath: m_Name
