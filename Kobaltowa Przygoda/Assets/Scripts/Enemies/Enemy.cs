@@ -30,17 +30,21 @@ public abstract class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         kidsMaster = FindObjectOfType<KidsMaster>();
         playerMine = GetComponent<PlayerMine>();
-        activateTimer += Time.time;
 
-        foreach(GameObject depositObject in GameObject.FindGameObjectsWithTag("CobaltDeposit"))
-        {
-            cobaltDeposits.Add(depositObject.GetComponent<DepositController>());
-        }
+        NewDay();
 
         _renderer = GetComponentInChildren<SpriteRenderer>(true);
     }
 
+    public void NewDay()
+    {
+        activateTimer += Time.time;
 
+        foreach (GameObject depositObject in GameObject.FindGameObjectsWithTag("CobaltDeposit"))
+        {
+            cobaltDeposits.Add(depositObject.GetComponent<DepositController>());
+        }
+    }
 
     protected virtual void BeginBehaviour() 
     {
