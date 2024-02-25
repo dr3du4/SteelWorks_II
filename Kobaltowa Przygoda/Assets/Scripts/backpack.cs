@@ -9,6 +9,7 @@ public class backpack : MonoBehaviour
     public int cobaltTotal;
     [SerializeField] private IngotAnim anim;
 
+    public float efektywnosc;
 
     public void DeliverCobalt(Kid k)
     {
