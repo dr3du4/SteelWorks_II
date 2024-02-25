@@ -39,7 +39,7 @@ private BasicEnemy kidnaper;
         if (!movement.isPlaying){
 		movement.Play();
         }
-    Debug.Log("tupu tupu tupu ");
+    //Debug.Log("tupu tupu tupu ");
 }
 
 
