@@ -429,6 +429,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3489922041899098658, guid: b1de22330c8005d45aaf7b8d8405f24a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489922041899098658, guid: b1de22330c8005d45aaf7b8d8405f24a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -436,6 +440,10 @@ PrefabInstance:
       propertyPath: _HungryManager
       value: 
       objectReference: {fileID: 871998465}
+    - target: {fileID: 5920969231255332416, guid: b1de22330c8005d45aaf7b8d8405f24a, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -503,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676457364010301322, guid: 3d792a96edfc28a4ea5e924b4d8e8477, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.37032
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676457364010301322, guid: 3d792a96edfc28a4ea5e924b4d8e8477, type: 3}
       propertyPath: m_LocalRotation.w
