@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d4499e5b4452e4ba3f9b8aa07030b4, type: 3}
+  m_Name: Legia
+  m_EditorClassIdentifier: 
+  index: 7
+  title: Sklep
+  background: {fileID: 21300000, guid: 4825a20a183730045966cbc2b0466659, type: 3}
+  text: "Kiedy po udanych zbiorach kobaltu wr\xF3cimy z naszymi pomocnikami w okolice
+    wyj\u015Bcia, automatycznie ca\u0142y ich uzbierany minera\u0142 zostanie sprzedany
+    i zamieniony na pieni\u0105dze, kt\xF3re mo\u017Cemy wykorzysta\u0107 w sklepie
+    do kupienia dla naszych pracownik\xF3w jedzenia, lepszego sprz\u0119tu, czy innych
+    ciekawych rzeczy. Aby otworzy\u0107 sklep naci\u015Bnij klawisz L."

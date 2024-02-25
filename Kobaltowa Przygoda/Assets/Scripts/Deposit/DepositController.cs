@@ -127,8 +127,10 @@ public class DepositController : SerializedMonoBehaviour
             k.BeginMining(transform.position);
         }
         isMining = true;
+        if (!TutorialSystem.Instance.tutorialWas(3)) TutorialSystem.Instance.DisplayTutorial(3);
         UpdateRates(excavateSpeedModifier, defaultEfficiencyRate);
         depositUI.SetMaxValue(requiredMinePoints);
+        
     }
 
     public (int, List<Kid>) StopExcavation()
@@ -171,6 +173,7 @@ public class DepositController : SerializedMonoBehaviour
         isMining = true;
         UpdateRates(0, 0);
         depositDepleted = true;
+        if (!TutorialSystem.Instance.tutorialWas(6)) TutorialSystem.Instance.DisplayTutorial(6);
         // Yeet children, destroy deposit object (set active false), give children cobalt
     }
 

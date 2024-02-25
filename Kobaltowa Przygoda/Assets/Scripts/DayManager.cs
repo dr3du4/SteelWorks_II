@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Sirenix.OdinInspector;
 
 public class DayManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class DayManager : MonoBehaviour
 
     public float dayLength = 180f;
     public int depositCount = 20;
+    public int childCount = 10;
     public Transform cobaltSpawnSpotsParent;
     [AssetsOnly] public GameObject cobaltDepositPrefab;
     public float deliverRange = 3.2f;
@@ -17,6 +19,9 @@ public class DayManager : MonoBehaviour
     [SerializeField] [ReadOnly] float dayTimer = 0f;
     [SerializeField] [ReadOnly] int dayCounter = 0;
 
+    private KidsMaster kidsMaster;
+
+	public UnityEvent OnEndDay;
 
     // Przepinanie obiektu "cobaltSpawnSpots" przy zmianie mapy
     private void Awake()
@@ -31,8 +36,17 @@ public class DayManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {	
+		OnEndDay.AddListener(EndDayTutorial);
+        TutorialSystem.Instance.DisplayTutorial(0);
+    }
+
     private void Update()
     {
+        if (!kidsMaster)
+            kidsMaster = FindAnyObjectByType<KidsMaster>();
+
         if (Input.GetKeyDown(KeyCode.L))
             StartDay();
 
@@ -41,11 +55,13 @@ public class DayManager : MonoBehaviour
         if(dayTimer >= dayLength)
         {
             Debug.Log("END OF DAY");
+			OnEndDay?.Invoke();
         }
     }
 
     void StartDay()
     {
+        kidsMaster.SpawnKids(childCount);
         dayCounter++;
         dayTimer = 0;
 
@@ -71,4 +87,11 @@ public class DayManager : MonoBehaviour
     {
         return  dayTimer;
     }
+
+	
+	private void EndDayTutorial()
+	{
+	    TutorialSystem.Instance.DisplayTutorial(8);
+		OnEndDay.RemoveListener(EndDayTutorial);
+	}
 }

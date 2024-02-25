@@ -138,7 +138,7 @@ public class KidsMaster : SerializedMonoBehaviour
         allKids.Remove(k);
         followingKids.Remove(k);
         Kid ret = k;
-        Loot l = Instantiate(lootPrefab, ret.transform.position, ret.transform.rotation).GetComponent<Loot>();
+        Loot l = Instantiate(lootPrefab, ret.transform.position, Quaternion.identity).GetComponent<Loot>();
         l.cobalt = k.holdCobalt;
         Destroy(k.gameObject);
         return ret;

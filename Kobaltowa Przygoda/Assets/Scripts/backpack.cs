@@ -19,5 +19,10 @@ public class backpack : MonoBehaviour
             anim.PlayAnim();
         }
     }
+    
+    public void DeliverCobalt(int k)
+    {
+        cobaltTotal += k;
+    }
 
 }

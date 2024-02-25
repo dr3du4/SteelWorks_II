@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d4499e5b4452e4ba3f9b8aa07030b4, type: 3}
+  m_Name: "DzieckoNieCz\u0142owiek"
+  m_EditorClassIdentifier: 
+  index: 3
+  title: "Dzieci kopi\u0105 do kiedy nie s\u0105 prze\u0142adowane"
+  background: {fileID: 21300000, guid: 119ba3b046daca544a5348d0344656f2, type: 3}
+  text: "Ka\u017Cda osoba oczywi\u015Bcie ma swoje ograniczenia, dlatego mo\u017Cesz
+    zauwa\u017Cy\u0107, \u017Ce czasem pracownicy stoj\u0105 przy z\u0142o\u017Cu
+    kobaltu i nic nie robi\u0105. To znak, \u017Ce nie dadz\u0105 rad\u0119 unie\u015B\u0107
+    wi\u0119cej i musz\u0105 odnie\u015B\u0107 kobalt do wyj\u015Bcia zanim zaczn\u0105
+    kopa\u0107 dalej.\n[ jak wygl\u0105da przeladowane dziecko]"
