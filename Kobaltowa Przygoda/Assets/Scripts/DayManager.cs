@@ -115,7 +115,7 @@ public class DayManager : MonoBehaviour
             kidsMaster.gameObject.transform.position = transform.position;
 
         if (firstDay)
-            hungerManager.eat(20);
+            hungerManager.eat(200);
 
 
         kidsMaster.SpawnKids(childCount);
