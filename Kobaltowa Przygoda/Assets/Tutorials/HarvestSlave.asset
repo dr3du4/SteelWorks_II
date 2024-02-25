@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   title: Harvest Slave
-  background: {fileID: 21300000, guid: 1bc96081667ad6444b597aea976986b9, type: 3}
+  background: {fileID: 21300000, guid: 925dfe7f409751146934c7d31212aef4, type: 3}
   text: "Aby sprawi\u0107, \u017Ce pracownicy chodz\u0105 za tob\u0105 wci\u015Bnij
     R. Chc\u0105c zostawi\u0107 ich w korytarzu wci\u015Bnij Q.\_"
   nextIndex: 2
