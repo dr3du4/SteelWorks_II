@@ -5,7 +5,7 @@ using UnityEngine;
 public class SnailAnimator : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    private BaseEnemy _based;
+    private BasicEnemy _based;
     private Vector3 previousPosition;
 
     [SerializeField] private SpriteRenderer _renderer;
@@ -13,7 +13,7 @@ public class SnailAnimator : MonoBehaviour
     private void Start()
     {
         // Inicjalizacja poprzedniej pozycji
-        _based = GetComponent<BaseEnemy>();
+        _based = GetComponent<BasicEnemy>();
         previousPosition = transform.position;
     }
     private void Update()

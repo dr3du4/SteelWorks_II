@@ -348,7 +348,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -383,6 +383,7 @@ MonoBehaviour:
   - {fileID: 8894967671498893371}
   - {fileID: 8011079714869717216}
   nest: {fileID: 4293835193926179603}
+  kidnapping: 0
 --- !u!114 &7904395334630485273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004e0e75c1d436665a68b38fa2d6316c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 8605443854064771155}
+  _renderer: {fileID: 5307693597959546215}
 --- !u!1 &7764888482216658073
 GameObject:
   m_ObjectHideFlags: 0

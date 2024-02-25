@@ -20,6 +20,8 @@ public class KidAnimator : MonoBehaviour
     {
         _animator.SetBool("isMining", _kid.isMining);
         _animator.SetBool("isFollowing", _kid.isFollow);
+        if (_kid.isEaten) _renderer.color = new Color(255, 255, 255, 0);
+        else _renderer.color = new Color(255, 255, 255, 255);
         CheckMovementDirection();
     }
     
