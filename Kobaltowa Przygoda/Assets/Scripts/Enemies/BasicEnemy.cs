@@ -21,7 +21,7 @@ public class BasicEnemy : Enemy
 
     
     bool chasing = false;
-    bool kidnapping = false;
+    public bool kidnapping = false;
     List<Kid> carriedWorkers = new();
 
     private void Update()
@@ -83,6 +83,7 @@ public class BasicEnemy : Enemy
 
                 foreach(Kid k in carriedWorkers)
                 {
+                    if (k == null) continue;
                     //k.transform.position = transform.position + new Vector3(0, 1f);
                     k.transform.SetPositionAndRotation(transform.position + new Vector3(0, 1f), Quaternion.Euler(90f, transform.rotation.y, transform.rotation.z));
                     //k.transform.SetPositionAndRotation(transform.position + new Vector3(0, 0.5f), Quaternion.Euler(0, 0, 180f));

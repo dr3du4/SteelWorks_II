@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Kobaltowa Przygoda/Assets/monster 1.meta
 guid: 3c5718749bc319446b138de64eaaf643
 folderAsset: yes
 DefaultImporter:
+========
+guid: 950b2c56e3c01f94da628d00bfebdfa8
+NativeFormatImporter:
+>>>>>>>> main:Kobaltowa Przygoda/Assets/Tutorials/hangar.asset.meta
   externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

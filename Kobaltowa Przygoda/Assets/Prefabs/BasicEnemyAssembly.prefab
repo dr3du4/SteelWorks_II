@@ -162,7 +162,7 @@ Animator:
   m_GameObject: {fileID: 1032378815010156168}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de0e590afb8b89ac7b4a22b0ba3ca237, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 7361374322424851918}
   - component: {fileID: 7814924471464598191}
   - component: {fileID: 7852077115249348612}
-  - component: {fileID: 4267603684866477112}
+  - component: {fileID: 7904395334630485273}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Untagged
@@ -348,7 +348,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -383,7 +383,8 @@ MonoBehaviour:
   - {fileID: 8894967671498893371}
   - {fileID: 8011079714869717216}
   nest: {fileID: 4293835193926179603}
---- !u!114 &4267603684866477112
+  kidnapping: 0
+--- !u!114 &7904395334630485273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -392,9 +393,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6283130713752718355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6aecb44a8931df43ab78ead3247560c, type: 3}
+  m_Script: {fileID: 11500000, guid: 004e0e75c1d436665a68b38fa2d6316c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 8605443854064771155}
+  _renderer: {fileID: 5307693597959546215}
 --- !u!1 &7764888482216658073
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KidAnimator : MonoBehaviour
+public class SnailAnimator : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    private Kid _kid;
+    private BasicEnemy _based;
     private Vector3 previousPosition;
 
     [SerializeField] private SpriteRenderer _renderer;
@@ -13,15 +13,12 @@ public class KidAnimator : MonoBehaviour
     private void Start()
     {
         // Inicjalizacja poprzedniej pozycji
-        _kid = GetComponent<Kid>();
+        _based = GetComponent<BasicEnemy>();
         previousPosition = transform.position;
     }
     private void Update()
     {
-        _animator.SetBool("isMining", _kid.isMining);
-        _animator.SetBool("isFollowing", _kid.isFollow);
-        if (_kid.isEaten) _renderer.color = new Color(255, 255, 255, 0);
-        else _renderer.color = new Color(255, 255, 255, 255);
+        _animator.SetBool("full", _based.kidnapping);
         CheckMovementDirection();
     }
     
@@ -46,3 +43,4 @@ public class KidAnimator : MonoBehaviour
         previousPosition = currentPosition;
     }
 }
+

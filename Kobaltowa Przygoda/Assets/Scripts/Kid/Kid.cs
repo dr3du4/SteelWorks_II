@@ -7,6 +7,7 @@ public class Kid : MonoBehaviour {
     private NavMeshAgent agent;
     [SerializeField] private Transform player = null;
     public bool isFollow = false;
+    public bool isEaten = false;
     public float maxDistance = 3f;
     public float movementSpeed = 4f;
     private Vector3 _direction;
@@ -66,11 +67,13 @@ public class Kid : MonoBehaviour {
         player = monster;
         agent.speed = 10f;*/
         isFollow = true;
+        isEaten = true;
         agent.ResetPath();
     }
 
     public void SaveWorker()
     {
+        isEaten = false;
         isFollow = false;
     }
 

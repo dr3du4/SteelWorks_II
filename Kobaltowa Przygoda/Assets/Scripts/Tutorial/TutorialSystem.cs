@@ -62,8 +62,12 @@ public class TutorialSystem : MonoBehaviour
 
     public void ShowHideTutorial(bool show) {
         int x = 0;
-        if (show) x = 255;
-
+        if (show) {
+            x = 255;
+            Time.timeScale = 0f;
+        }
+        else Time.timeScale = 1f;
+        
         Color c = tutorialBackground.color;
         tutorialBackground.color = new Color(c.r, c.g, c.b, x);
         
