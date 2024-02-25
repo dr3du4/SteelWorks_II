@@ -10,6 +10,7 @@ public class DayManager : MonoBehaviour
     public static DayManager Instance { get; private set; }
 
     public float dayLength = 180f;
+    public float priceChangeTime = 15f;
     public int depositCount = 20;
     public int childCount = 10;
     public Transform cobaltSpawnSpotsParent;

@@ -23,8 +23,14 @@ public class UIHandler : MonoBehaviour
     void ToggleShop()
     {
         if (shopCanvas.gameObject.activeInHierarchy)
+        {
             shopCanvas.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
         else
+        {
+            Time.timeScale = 0;
             shopCanvas.gameObject.SetActive(true);
+        }
     }
 }
