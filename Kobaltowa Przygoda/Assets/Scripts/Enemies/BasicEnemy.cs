@@ -25,6 +25,8 @@ public class BasicEnemy : Enemy
 
     private void Update()
     {
+        if (!TutorialSystem.Instance.tutorialWas(4) && _renderer.isVisible) TutorialSystem.Instance.DisplayTutorial(4);
+        
         if (refreshWorkerList)
             FetchAllWorkers();
 

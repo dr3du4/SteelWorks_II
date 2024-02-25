@@ -8,6 +8,9 @@ using Sirenix.OdinInspector;
 public class KidsMaster : SerializedMonoBehaviour
 {
     [SerializeField] float kidRange = 1.5f;
+    [AssetsOnly] [SerializeField] Transform blackKidPrefab;
+    [AssetsOnly] [SerializeField] Transform whiteKidPrefab;
+    [AssetsOnly] [SerializeField] Transform yellowKidPrefab;
     [AssetsOnly] [SerializeField] Transform kidPrefab;
     [AssetsOnly] [SerializeField] Transform lootPrefab;
     
@@ -124,8 +127,23 @@ public class KidsMaster : SerializedMonoBehaviour
 
     public void SpawnKids(int returnedKids)
     {
-        for(int i=0; i<returnedKids; i++)
+        
+        for(int i=0; i<1; i++)
         {
+            
+            switch (returnedKids)
+            {
+                case 1:
+                    kidPrefab = blackKidPrefab;
+                    break;
+                case 2:
+                    kidPrefab = yellowKidPrefab;
+                    break;
+                case 3:
+                    kidPrefab = blackKidPrefab;
+                    break;
+                    
+            }
             Kid k = Instantiate(kidPrefab, transform.position + new Vector3(Random.Range(0.5f, 1.5f), Random.Range(0.5f, 1.5f),0f), transform.rotation).GetComponent<Kid>();
             allKids.Add(k);
             followingKids.Add(k);
