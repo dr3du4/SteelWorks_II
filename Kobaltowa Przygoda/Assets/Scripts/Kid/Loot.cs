@@ -19,13 +19,13 @@ public class Loot : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
-    private void AddFood() {
-        Debug.Log("FOOD");
+    private void AddFood()
+    {
+        //eat(5);
     }
     
     private void AddCobalt(int k) {
-        Debug.Log("KOBALT");
-        Debug.Log(k);
+        DayManager.Instance.GetComponent<backpack>().DeliverCobalt(k);
     }
 
     private void AddItem() {
