@@ -117,6 +117,8 @@ GameObject:
   - component: {fileID: 8796792307936228552}
   - component: {fileID: 993003040622281364}
   - component: {fileID: 4629359351683558966}
+  - component: {fileID: 514827492331660207}
+  - component: {fileID: 6954566594633201618}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -159,11 +161,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayLength: 180
   depositCount: 10
+  childCount: 10
   cobaltSpawnSpotsParent: {fileID: 0}
   cobaltDepositPrefab: {fileID: 103071585179109732, guid: 536e6e3ca70b2e74f8ef56880d921977, type: 3}
   deliverRange: 3.2
   dayTimer: 0
   dayCounter: 0
+  OnEndDay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &993003040622281364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -202,9 +208,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -710256595
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6034218c03415964b8a511e06aab74c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -231,6 +237,35 @@ MonoBehaviour:
   money: 0
   cobaltTotal: 0
   anim: {fileID: 3882139529254599775}
+--- !u!114 &514827492331660207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025042047415664211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452a3850e6f74c2587b040111a615d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kids: []
+  avarageHunger: 0
+  _KidsMaster: {fileID: 0}
+--- !u!114 &6954566594633201618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025042047415664211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21e4baf2299bda41bd63a38c062f291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopToggle: 9
+  shopCanvas: {fileID: 0}
 --- !u!1 &4438283361400847927
 GameObject:
   m_ObjectHideFlags: 0

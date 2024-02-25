@@ -8,7 +8,6 @@ public class kobaltSelling : MonoBehaviour
     public float money;
     public int kobaltAmount;
     public float kurs = 0;
-    public GameObject eq;
     
     public TMP_Text kursText;
     public TMP_Text moneyText;
@@ -22,9 +21,9 @@ public class kobaltSelling : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        backpack plecak = eq.GetComponent<backpack>();
+        backpack plecak = DayManager.Instance.GetComponent<backpack>();
         
-            if (eq != null)
+            if (DayManager.Instance != null)
             {
                 kobaltWPlecaku = plecak.cobaltTotal;
                 coinyWPlecaku = plecak.money;
@@ -39,7 +38,7 @@ public class kobaltSelling : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Obiekt eq nie został przypisany w komponencie kobaltSelling.");
+                Debug.LogError("Nie znaleziono Game Managera na scenie.");
             }
         
     }
@@ -72,7 +71,8 @@ public class kobaltSelling : MonoBehaviour
     public void Buy()
     {
        if(kobaltAmount>0)
-       { backpack plecak = eq.GetComponent<backpack>();
+       { 
+             backpack plecak = DayManager.Instance.GetComponent<backpack>();
              kobaltWPlecaku = kobaltWPlecaku - kobaltAmount;
                     coinyWPlecaku += money;
                     plecak.money += money; 
