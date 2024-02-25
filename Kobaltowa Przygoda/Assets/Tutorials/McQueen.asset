@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d4499e5b4452e4ba3f9b8aa07030b4, type: 3}
+  m_Name: McQueen
+  m_EditorClassIdentifier: 
+  index: 5
+  title: "potw\xF3r \u015Bcigacz (pu\u0142apki)"
+  background: {fileID: 0}
+  text: "Drugim okazem cz\u0119sto spotykanym w kompleksie jest POTWOR Y, kt\xF3rego
+    le\u017Ce mo\u017Cemy podziwia\u0107 w korytarzach. Potw\xF3r chc\u0105c pokaza\u0107
+    swoje skromne progi zabiera wybranego pracownika do siebie, w trakcie tego, mo\u017Cemy
+    podej\u015B\u0107 do potwora i kulturalnie wyt\u0142umaczy\u0107 mu u\u017Cywaj\u0105c
+    przycisku R, \u017Ce ta osoba aktualnie jest w pracy i musi j\u0105 zostawi\u0107."

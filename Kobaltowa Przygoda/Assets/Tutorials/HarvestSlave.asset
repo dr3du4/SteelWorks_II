@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d4499e5b4452e4ba3f9b8aa07030b4, type: 3}
+  m_Name: HarvestSlave
+  m_EditorClassIdentifier: 
+  index: 1
+  title: Harvest Slave
+  background: {fileID: 0}
+  text: "W kompleksie pracuje si\u0119 w m\u0142odym i dynamicznym zespole, mo\u017Cesz
+    zawo\u0142a\u0107 swoich pomocnik\xF3w przyciskaj\u0105c R na klawiaturze. Od
+    teraz b\u0119dziecie chodzi\u0107 wsz\u0119dzie razem. Je\u015Bli b\u0119dziesz
+    mia\u0142 kt\xF3rego\u015B do\u015B\u0107 mo\u017Cesz te\u017C zostawi\u0107
+    go przyciskaj\u0105c Q na klawiaturze.\nPozostawionych pracownik\xF3w dzi\u0119ki
+    polityce czipowania, mo\u017Cesz widzie\u0107 przez ca\u0142y czas na minimapie."

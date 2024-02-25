@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7811620849441615007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279804161561911779}
+  - component: {fileID: 13301448722178390}
+  m_Layer: 0
+  m_Name: TutorialSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1279804161561911779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7811620849441615007}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &13301448722178390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7811620849441615007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107ab7a42a92184f0a9167e93e9d0fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorials:
+  - {fileID: 11400000, guid: 53420ddb4ad50015d8b3f2392162eb0c, type: 2}
+  - {fileID: 11400000, guid: 58050492c02838d518a614a475848b96, type: 2}
+  - {fileID: 11400000, guid: efd8d5beea3ded279b77e90fc8c84150, type: 2}
+  - {fileID: 11400000, guid: b2a892353eebe5372b91c8a7c36d5644, type: 2}
+  - {fileID: 11400000, guid: bf3d339ed065f07b5b02650794ed1c5a, type: 2}
+  - {fileID: 11400000, guid: 05f7af09aedd3b6d78863e59d2455fb5, type: 2}
+  - {fileID: 11400000, guid: c1dcd11ec8fe16de5b2ea89c186d0b74, type: 2}
+  - {fileID: 11400000, guid: 72babdc58a5296b3298e2ee67686ae39, type: 2}
+  - {fileID: 11400000, guid: edb768e47080c06109d4c3e8202835cc, type: 2}
+  wasDisplayed: 

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d4499e5b4452e4ba3f9b8aa07030b4, type: 3}
+  m_Name: Monster
+  m_EditorClassIdentifier: 
+  index: 4
+  title: Monster
+  background: {fileID: 0}
+  text: "Na planecie Mars mo\u017Cesz opr\xF3cz pi\u0119knych okaz\xF3w geologicznych
+    spotka\u0107 r\xF3wnie\u017C niesamowite gatunki fauny. Przyk\u0142adami s\u0105
+    np., POTWOR X, kt\xF3ry potrafi wyczu\u0107 pracownik\xF3w kopalni ale niestety
+    myli ich z obiadem i cz\u0119sto ich zjada. Mo\u017Cesz pr\xF3bowa\u0107 zatrzyma\u0107
+    go zostawiaj\u0105c w korytarzach pu\u0142apki.\_"
