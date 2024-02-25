@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Sirenix.OdinInspector;
 
 public class DayManager : MonoBehaviour
@@ -20,6 +21,7 @@ public class DayManager : MonoBehaviour
 
     private KidsMaster kidsMaster;
 
+	public UnityEvent OnEndDay;
 
     // Przepinanie obiektu "cobaltSpawnSpots" przy zmianie mapy
     private void Awake()
@@ -32,6 +34,12 @@ public class DayManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Start()
+    {	
+		OnEndDay.AddListener(EndDayTutorial);
+        TutorialSystem.Instance.DisplayTutorial(0);
     }
 
     private void Update()
@@ -47,6 +55,7 @@ public class DayManager : MonoBehaviour
         if(dayTimer >= dayLength)
         {
             Debug.Log("END OF DAY");
+			OnEndDay?.Invoke();
         }
     }
 
@@ -78,4 +87,11 @@ public class DayManager : MonoBehaviour
     {
         return  dayTimer;
     }
+
+	
+	private void EndDayTutorial()
+	{
+	    TutorialSystem.Instance.DisplayTutorial(8);
+		OnEndDay.RemoveListener(EndDayTutorial);
+	}
 }

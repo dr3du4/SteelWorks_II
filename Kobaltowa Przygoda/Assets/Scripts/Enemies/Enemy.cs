@@ -23,6 +23,8 @@ public abstract class Enemy : MonoBehaviour
     protected List<GameObject> workers = new();
     protected List<DepositController> cobaltDeposits = new();
 
+    protected SpriteRenderer _renderer;
+    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -34,6 +36,8 @@ public abstract class Enemy : MonoBehaviour
         {
             cobaltDeposits.Add(depositObject.GetComponent<DepositController>());
         }
+
+        _renderer = GetComponentInChildren<SpriteRenderer>(true);
     }
 
 

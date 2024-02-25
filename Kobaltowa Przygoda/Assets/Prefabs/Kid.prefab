@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4378890545097111009}
@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6709424112686783623}
   - component: {fileID: 5229831321767525900}
+  - component: {fileID: 4484077963551353364}
   m_Layer: 0
   m_Name: KidBody
   m_TagString: Untagged
@@ -168,6 +169,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4484077963551353364
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5869799950985238369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35687e55ae517fd8cb9327cf7dcb63b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7200372229466835481
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +201,7 @@ GameObject:
   - component: {fileID: 4378890545097111009}
   - component: {fileID: 2260390450754662739}
   - component: {fileID: 1529847008477126532}
+  - component: {fileID: 1620646966379016815}
   m_Layer: 0
   m_Name: Kid
   m_TagString: Kid
@@ -249,3 +272,16 @@ MonoBehaviour:
   speed: 0
   ladownsc: 0
   maxCobalt: 0
+--- !u!114 &1620646966379016815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200372229466835481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8620e09b5ef18e17fa6925f239cadb3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 4484077963551353364}
