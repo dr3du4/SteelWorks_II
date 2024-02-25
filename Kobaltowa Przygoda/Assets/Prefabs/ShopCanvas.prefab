@@ -3928,6 +3928,14 @@ PrefabInstance:
       propertyPath: moneyAmount
       value: 
       objectReference: {fileID: 5506844115210760873}
+    - target: {fileID: 5686857234033607427, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: isRepetitive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142983923751066869, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c799bb240c5a2e04da75063c1e4a5ebe, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4260,6 +4268,10 @@ PrefabInstance:
       objectReference: {fileID: 5506844115210760873}
     - target: {fileID: 2641145969425365963, guid: 1f61e1bb7006a7c45bf7c965bc902cb7, type: 3}
       propertyPath: isRepetative
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641145969425365963, guid: 1f61e1bb7006a7c45bf7c965bc902cb7, type: 3}
+      propertyPath: isRepetitive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3204038637962118421, guid: 1f61e1bb7006a7c45bf7c965bc902cb7, type: 3}
@@ -4913,6 +4925,14 @@ PrefabInstance:
       propertyPath: moneyAmount
       value: 
       objectReference: {fileID: 5506844115210760873}
+    - target: {fileID: 5686857234033607427, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: isRepetitive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142983923751066869, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c799bb240c5a2e04da75063c1e4a5ebe, type: 3}
     m_RemovedComponents:
     - {fileID: 3135411550713164764, guid: f4335f000715425409f617cfc98e75a2, type: 3}
     m_RemovedGameObjects: []
@@ -5286,6 +5306,10 @@ PrefabInstance:
       propertyPath: isRepetative
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2641145969425365963, guid: 1f61e1bb7006a7c45bf7c965bc902cb7, type: 3}
+      propertyPath: isRepetitive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3204038637962118421, guid: 1f61e1bb7006a7c45bf7c965bc902cb7, type: 3}
       propertyPath: m_Name
       value: Oferta (2)
@@ -5628,6 +5652,14 @@ PrefabInstance:
       propertyPath: moneyAmount
       value: 
       objectReference: {fileID: 5506844115210760873}
+    - target: {fileID: 5686857234033607427, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: isRepetitive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142983923751066869, guid: f4335f000715425409f617cfc98e75a2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c799bb240c5a2e04da75063c1e4a5ebe, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
