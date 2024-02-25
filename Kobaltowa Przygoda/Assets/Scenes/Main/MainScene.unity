@@ -707,21 +707,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1173402526}
     - target: {fileID: 4480740527285923500, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
-      propertyPath: lootPrefab
-      value: 
-      objectReference: {fileID: 5222109853491430195, guid: a506642fdb60314479ef1f6dad075d00, type: 3}
-    - target: {fileID: 4480740527285923500, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4480740527285923500, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
-    - target: {fileID: 5644080657469508511, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5644080657469508511, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -17762895
-      objectReference: {fileID: 0}
     - target: {fileID: 6823539153779676200, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.7
