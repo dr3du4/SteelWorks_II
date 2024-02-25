@@ -62,9 +62,16 @@ public class Kid : MonoBehaviour {
 
     public void FollowMonster(Transform monster)
     {
-        isFollow = true;
+        /*isFollow = true;
         player = monster;
-        agent.speed = 10f;
+        agent.speed = 10f;*/
+        isFollow = true;
+        agent.ResetPath();
+    }
+
+    public void SaveWorker()
+    {
+        isFollow = false;
     }
 
     public void StopFollowing(Vector2 target) {

@@ -22,6 +22,9 @@ public class KidsMaster : SerializedMonoBehaviour
     private List<Kid> allKids = new();
 	private List<Kid> kidsInRange;
 
+    private List<BasicEnemy> allKidnappers = new();
+    private BasicEnemy kidnapperInRange;
+
     bool refreshKids = false;
     PlayerMine playerMine;
 
@@ -29,12 +32,16 @@ public class KidsMaster : SerializedMonoBehaviour
     {
         allKids = FetchAllKids();
         playerMine = GetComponent<PlayerMine>();
+
+        allKidnappers = new(FindObjectsOfType<BasicEnemy>());
     }
     public List<Kid> KidsList
     {
         get { return allKids; }
     }
     private void Update() {
+        UpdateClosestKidnapper();
+
         if (Input.GetKeyDown(KeyCode.Space))
             SpawnKids(2);
         if (refreshKids)
@@ -68,6 +75,12 @@ public class KidsMaster : SerializedMonoBehaviour
                 }
 			}
 			kidsInRange.Clear();
+
+            if (kidnapperInRange)
+            {
+                Debug.Log("boop");
+                kidnapperInRange.SaveKid();
+            }
         }
 
     }
@@ -127,7 +140,6 @@ public class KidsMaster : SerializedMonoBehaviour
 
     public void SpawnKids(int returnedKids)
     {
-        
         for(int i=0; i<returnedKids; i++)
             SpawnSpecificWorker(Random.Range(1, 4));
     }
@@ -191,6 +203,18 @@ public class KidsMaster : SerializedMonoBehaviour
     public List<Kid> GetAllKids()
     {
         return allKids;
+    }
+
+    private void UpdateClosestKidnapper()
+    {
+        kidnapperInRange = null;
+        foreach(BasicEnemy b in allKidnappers)
+        {
+            if(!kidnapperInRange || Vector2.Distance(transform.position, b.transform.position) < Vector2.Distance(transform.position, kidnapperInRange.transform.position))
+            {
+                kidnapperInRange = b;
+            }
+        }
     }
 
     /*
