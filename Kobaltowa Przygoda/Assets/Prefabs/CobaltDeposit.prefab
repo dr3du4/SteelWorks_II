@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7595374581609911824}
   - component: {fileID: 421077341442660117}
   - component: {fileID: 5143257705180137483}
+  - component: {fileID: 7694199173659219499}
+  - component: {fileID: 33337068638430234}
   m_Layer: 0
   m_Name: CobaltDeposit
   m_TagString: CobaltDeposit
@@ -163,6 +165,38 @@ MonoBehaviour:
   cobalt: 0
   miners: []
   depositDepleted: 0
+--- !u!114 &7694199173659219499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103071585179109732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb83386741196f6478530884655474c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullDeposit: {fileID: 21300000, guid: fb90ec3e4c1582744980312fcd275f50, type: 3}
+  excavatingDeposit: {fileID: 21300000, guid: 923b88f01c6ab6e439cca305fba7151b, type: 3}
+  excavatingDeposit2: {fileID: 21300000, guid: 631291dbeb747ec428b37b9cae9d5252, type: 3}
+  excavatedDeposit: {fileID: 21300000, guid: 15066c6d38143b249838cfb44e371549, type: 3}
+--- !u!114 &33337068638430234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103071585179109732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1441097643746394901
 GameObject:
   m_ObjectHideFlags: 0
