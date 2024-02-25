@@ -23,10 +23,7 @@ public class HungrySliderControler : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0 && gameObject.activeSelf)
-            gameObject.SetActive(false);
-        else if(!gameObject.activeSelf)
-            gameObject.SetActive(true);
+        
 
 
         food = _HungryManager.avarageHunger;
