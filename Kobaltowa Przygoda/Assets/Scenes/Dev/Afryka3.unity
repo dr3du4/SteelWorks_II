@@ -2414,7 +2414,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 150
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -7103,6 +7103,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 720045486912579147, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 720045486912579147, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3555507501097471408, guid: b6f70904e6ab9c3e0af98ee8e5c0031d, type: 3}
       propertyPath: minerAssignPanel
       value: 
@@ -7304,11 +7312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4329441264545251048, guid: e9f33b40f82257b41a635fb1af3ba0dc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -518.8
+      value: -873.7
       objectReference: {fileID: 0}
     - target: {fileID: 4329441264545251048, guid: e9f33b40f82257b41a635fb1af3ba0dc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 189.8
+      value: 377.2
       objectReference: {fileID: 0}
     - target: {fileID: 5166462524919796779, guid: e9f33b40f82257b41a635fb1af3ba0dc, type: 3}
       propertyPath: m_SizeDelta.x
@@ -7329,6 +7337,10 @@ PrefabInstance:
     - target: {fileID: 5888816465930449198, guid: e9f33b40f82257b41a635fb1af3ba0dc, type: 3}
       propertyPath: m_Name
       value: Minimap
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205580274811179303, guid: e9f33b40f82257b41a635fb1af3ba0dc, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6594022323124328944, guid: e9f33b40f82257b41a635fb1af3ba0dc, type: 3}
       propertyPath: m_Pivot.x
