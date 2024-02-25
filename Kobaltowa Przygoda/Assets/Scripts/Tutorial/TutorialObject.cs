@@ -9,4 +9,5 @@ public class TutorialObject : ScriptableObject
 	[SerializeField] public string title;
     [SerializeField] public Sprite background;
     [SerializeField] [TextArea]public string text;
+    [SerializeField] public int nextIndex = -1;
 }

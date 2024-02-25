@@ -13,9 +13,11 @@ public class TutorialSystem : MonoBehaviour
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private Image describeBackground;
     [SerializeField] private TMP_Text describeText;
-    
     [SerializeField] private List<TutorialObject> tutorials = new();
     [SerializeField] private List<bool> wasDisplayed;
+    [SerializeField] private GameObject closeButton;
+    [SerializeField] private GameObject nextButton;
+    private int lastIndex = -1;
 
     private void Awake()
     {
@@ -33,19 +35,30 @@ public class TutorialSystem : MonoBehaviour
         ShowHideTutorial(false);
     }
 
-
+    public bool tutorialWas(int index) {
+        return wasDisplayed[index];
+    }
+    
     public void DisplayTutorial(int index) {
         TutorialObject t = tutorials.Find(a => a.index == index);
-        
         //Display tutorial
+        ShowHideTutorial(true); //with clear texts
         //SetImage
         tutorialBackground.sprite = t.background;
-        ShowHideTutorial(true); //with clear texts
         //SetText
         titleText.text = t.title;
         describeText.text = t.text;
         
+        if (t.nextIndex == -1) closeButton.SetActive(true);
+        else nextButton.SetActive(true);
+        
         wasDisplayed[index] = true;
+        lastIndex = index;
+    }
+
+    public void NextTutorial() {
+        TutorialObject t = tutorials.Find(a => a.index == lastIndex);
+        DisplayTutorial(t.nextIndex);
     }
 
     public void ShowHideTutorial(bool show) {
@@ -63,7 +76,9 @@ public class TutorialSystem : MonoBehaviour
 
         titleText.text = "";
         describeText.text = "";
-
+        
         tutorialDisplay.SetActive(show);
+        closeButton.SetActive(false);
+        nextButton.SetActive(false);
     }
 }
