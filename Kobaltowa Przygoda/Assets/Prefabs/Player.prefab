@@ -319,6 +319,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   kidRange: 1.5
+  blackKidPrefab: {fileID: 4378890545097111009, guid: c6fc7ffda174ca0518b7546b129f8382, type: 3}
+  whiteKidPrefab: {fileID: 4378890545097111009, guid: 4c6492c621114f343a4d81a6d04ae8a3, type: 3}
+  yellowKidPrefab: {fileID: 4378890545097111009, guid: b776f4834cb118b44b833d1d8e5db5ab, type: 3}
   kidPrefab: {fileID: 4378890545097111009, guid: c6fc7ffda174ca0518b7546b129f8382, type: 3}
   lootPrefab: {fileID: 5222109853491430195, guid: a506642fdb60314479ef1f6dad075d00, type: 3}
   leaveKidBind: 113
