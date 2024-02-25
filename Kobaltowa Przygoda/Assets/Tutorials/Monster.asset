@@ -15,8 +15,6 @@ MonoBehaviour:
   index: 4
   title: Monster
   background: {fileID: 21300000, guid: 92abf0a0cfc340c4387d81881821a0dc, type: 3}
-  text: "Na planecie Mars mo\u017Cesz opr\xF3cz pi\u0119knych okaz\xF3w geologicznych
-    spotka\u0107 r\xF3wnie\u017C niesamowite gatunki fauny. Przyk\u0142adami s\u0105
-    np., POTWOR X, kt\xF3ry potrafi wyczu\u0107 pracownik\xF3w kopalni ale niestety
-    myli ich z obiadem i cz\u0119sto ich zjada. Mo\u017Cesz pr\xF3bowa\u0107 zatrzyma\u0107
-    go zostawiaj\u0105c w korytarzach pu\u0142apki.\_"
+  text: "Potwory \u015Bledz\u0105 i zabijaj\u0105 pracownik\xF3w. Mo\u017Cesz im
+    przeszkadza\u0107 zastawiaj\u0105c na nie pu\u0142apki pod przyciskiem X.\_"
+  nextIndex: -1

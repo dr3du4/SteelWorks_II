@@ -15,9 +15,6 @@ MonoBehaviour:
   index: 8
   title: Koniec dnia
   background: {fileID: 21300000, guid: 1528321241206ab4abd15a33e30f622c, type: 3}
-  text: " koniec dnia pracy zawalanie sie od\u0142amu kopalniKiedy po udanych zbiorach
-    kobaltu wr\xF3cimy z naszymi pomocnikami w okolice wyj\u015Bcia, automatycznie
-    ca\u0142y ich uzbierany minera\u0142 zostanie  sprzedany i zamieniony na pieni\u0105dze,
-    kt\xF3re mo\u017Cemy wykorzysta\u0107 w sklepie  do kupienia dla naszych pracownik\xF3w
-    jedzenia, lepszego sprz\u0119tu, czy  innych ciekawych rzeczy. Aby otworzy\u0107
-    sklep naci\u015Bnij klawisz L."
+  text: "Na zebranie kobaltu jest ograniczony czas wybuchem jaskini. Czas pozosta\u0142y
+    do wybuchu \u0142adunku widoczny jest w trakcie rozgrywki.\_"
+  nextIndex: -1
