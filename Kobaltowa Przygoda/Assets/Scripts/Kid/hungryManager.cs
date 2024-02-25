@@ -25,7 +25,7 @@ public class hungryManager : MonoBehaviour
       kids = _KidsMaster.KidsList;
 
       // Wyświetl liczbę obiektów KID w konsoli
-      Debug.Log("Liczba obiektów KID z innego skryptu: " + kids.Count);
+      //Debug.Log("Liczba obiektów KID z innego skryptu: " + kids.Count);
       StartCoroutine(HungryCountdown());
       
    }
@@ -89,7 +89,7 @@ public class hungryManager : MonoBehaviour
              avarageHunger -=((kids.Count/10));
          }
         
-         Debug.Log("Aktualna wartość: " + avarageHunger);
+         //Debug.Log("Aktualna wartość: " + avarageHunger);
          hungerDeath();
          yield return new WaitForSeconds(1f);
       }
