@@ -181,6 +181,11 @@ public class DayManager : MonoBehaviour
         return  dayTimer;
     }
 
+    public int GetDay()
+    {
+        return dayCounter;
+    }
+
 	
 	private void EndDayTutorial()
 	{
