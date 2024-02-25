@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class white : Kid
 {
-    void Start()
+    void Awake()
     {
          
      efficiency = 0.9f;
