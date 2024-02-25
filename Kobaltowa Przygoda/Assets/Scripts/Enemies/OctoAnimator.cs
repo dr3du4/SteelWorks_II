@@ -29,10 +29,10 @@ public class OctoAnimator : MonoBehaviour
         Vector3 movement = currentPosition - previousPosition;
 
         // Sprawdzenie kierunku na podstawie składowej x
-        if (movement.x > 0) {
+        if (movement.x > 0.01f) {
             _renderer.flipX = true;
         }
-        else if (movement.x < 0)
+        else if (movement.x < -0.01f)
         {
             _renderer.flipX = false;
         }
