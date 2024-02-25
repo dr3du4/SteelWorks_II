@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 2
   title: Zbieranie kobaltu
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 95bc8f811138b52458e25051dffa3b70, type: 3}
   text: "Najciekawszym (z ekonomicznego punktu widzenia) elementem naszego kompleksu
     s\u0105 minera\u0142y, mianowicie kobalt, je\u015Bli znajdziesz go podczas eksploracji,
     op\u0142aca si\u0119 zostawi\u0107 cz\u0119\u015B\u0107 naszej dru\u017Cyny \u017Ceby

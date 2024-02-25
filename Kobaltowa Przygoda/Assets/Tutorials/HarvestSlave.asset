@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   title: Harvest Slave
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 1bc96081667ad6444b597aea976986b9, type: 3}
   text: "W kompleksie pracuje si\u0119 w m\u0142odym i dynamicznym zespole, mo\u017Cesz
     zawo\u0142a\u0107 swoich pomocnik\xF3w przyciskaj\u0105c R na klawiaturze. Od
     teraz b\u0119dziecie chodzi\u0107 wsz\u0119dzie razem. Je\u015Bli b\u0119dziesz

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 7
   title: Sklep
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 4825a20a183730045966cbc2b0466659, type: 3}
   text: "Kiedy po udanych zbiorach kobaltu wr\xF3cimy z naszymi pomocnikami w okolice
     wyj\u015Bcia, automatycznie ca\u0142y ich uzbierany minera\u0142 zostanie sprzedany
     i zamieniony na pieni\u0105dze, kt\xF3re mo\u017Cemy wykorzysta\u0107 w sklepie
