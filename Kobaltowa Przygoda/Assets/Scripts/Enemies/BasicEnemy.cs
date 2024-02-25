@@ -134,7 +134,19 @@ public class BasicEnemy : Enemy
         return new List<Kid>(carriedWorkers);
     }
 
-    
+    public void SaveKid()
+    {
+        if(carriedWorkers.Count > 0)
+        {
+            foreach(Kid k in carriedWorkers)
+            {
+                k.SaveWorker();
+                k.StartFollowing();
+            }
+
+            carriedWorkers.Clear();
+        }
+    }
 
     private void IgnoreTargets(float time)
     {
