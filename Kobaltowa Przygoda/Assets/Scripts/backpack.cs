@@ -10,6 +10,7 @@ public class backpack : MonoBehaviour
     private bool firstthingi =true;
     [SerializeField] private IngotAnim anim;
 
+    public float efektywnosc;
 
     public void DeliverCobalt(Kid k)
     {
