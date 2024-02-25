@@ -9,6 +9,7 @@ public class FoodButton : SellingMainScript
 
     private void Start()
     {
+        priceText.text = price.ToString();
         _HungryManager = DayManager.Instance.GetComponent<hungryManager>();
     }
 
