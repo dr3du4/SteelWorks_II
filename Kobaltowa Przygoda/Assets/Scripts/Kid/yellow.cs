@@ -5,7 +5,7 @@ using UnityEngine;
 public class yellow : Kid
 { 
  
-    void Start()
+    void Awake()
     {
          
         efficiency = 1.2f;
