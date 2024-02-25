@@ -179,7 +179,7 @@ Animator:
   m_GameObject: {fileID: 5869799950985238369}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 35687e55ae517fd8cb9327cf7dcb63b1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 25b0eb4e284d20811aa09ddf980ba9c8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   isFollow: 1
+  isEaten: 0
   maxDistance: 3
   movementSpeed: 4
   isMining: 0
