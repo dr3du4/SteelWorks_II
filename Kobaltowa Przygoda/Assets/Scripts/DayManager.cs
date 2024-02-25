@@ -123,6 +123,11 @@ public class DayManager : MonoBehaviour
         dayTimer = 0;
 
         CreateRandomDeposits(depositCount);
+
+        foreach(Enemy enemy in FindObjectsOfType<Enemy>())
+        {
+            enemy.NewDay();
+        }
     }
 
     void CreateRandomDeposits(int count)
