@@ -19,7 +19,7 @@ public class playerMovement : MonoBehaviour
     private void Update()
     {
         CalculateMovement();
-
+        
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         LookTowards(mousePos);
