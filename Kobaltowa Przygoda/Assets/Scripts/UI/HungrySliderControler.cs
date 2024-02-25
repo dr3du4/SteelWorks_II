@@ -23,6 +23,11 @@ public class HungrySliderControler : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0 && gameObject.activeSelf)
+            gameObject.SetActive(false);
+        else if(!gameObject.activeSelf)
+            gameObject.SetActive(true);
+
 
         food = _HungryManager.avarageHunger;
         UpdateSliderValue();
@@ -40,7 +45,7 @@ public class HungrySliderControler : MonoBehaviour
             if (food < 0)
             {
                 // Pulsuj sliderem, jeśli wartość jedzenia jest mniejsza niż 0
-                foodSlider.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+                //foodSlider.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
                 
                 handleSlideAreaImage.color=Color.red;
                 fillAreaImage.color = Color.red;
@@ -48,7 +53,7 @@ public class HungrySliderControler : MonoBehaviour
                 
                 yield return new WaitForSeconds(0.5f);
                 
-                foodSlider.transform.localScale = Vector3.one;
+                //foodSlider.transform.localScale = Vector3.one;
 
 
                 handleSlideAreaImage.color = originalColorhandle;
