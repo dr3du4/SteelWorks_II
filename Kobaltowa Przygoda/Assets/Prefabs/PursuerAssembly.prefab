@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7987562638179796682}
   - component: {fileID: 2173214026333776303}
+  - component: {fileID: 8477802847124341746}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -233,8 +234,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b5e9c32eb610d7ce9b4b27390f8dee84, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -244,6 +245,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8477802847124341746
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742099760144266069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 656827992ecf325838325ea6f7a623c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9164638887461132607
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +277,7 @@ GameObject:
   - component: {fileID: 356007066710670574}
   - component: {fileID: 8777417513006353246}
   - component: {fileID: 3328002685519421416}
+  - component: {fileID: 5390744895056729912}
   m_Layer: 0
   m_Name: Pursuer
   m_TagString: Untagged
@@ -291,7 +314,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 1
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -316,8 +339,22 @@ MonoBehaviour:
   stunTime: 2.5
   detectionRange: 10
   kidnapRange: 1.5
+  _animator: {fileID: 8477802847124341746}
   speed: 0.75
   startPoints:
   - {fileID: 6487244766007271436}
   - {fileID: 6923590293956343038}
   - {fileID: 6836445257950562908}
+--- !u!114 &5390744895056729912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164638887461132607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fee539c161c3db81a7fe2d1c62d872a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 2173214026333776303}
