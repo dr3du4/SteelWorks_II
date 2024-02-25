@@ -3172,7 +3172,51 @@ PrefabInstance:
     - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
       propertyPath: tutorialBackground
       value: 
-      objectReference: {fileID: 5254270004050919366}
+      objectReference: {fileID: 8876132692059138197}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c1dcd11ec8fe16de5b2ea89c186d0b74, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 58050492c02838d518a614a475848b96, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: efd8d5beea3ded279b77e90fc8c84150, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: b2a892353eebe5372b91c8a7c36d5644, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: bf3d339ed065f07b5b02650794ed1c5a, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 05f7af09aedd3b6d78863e59d2455fb5, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53420ddb4ad50015d8b3f2392162eb0c, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: b2a892353eebe5372b91c8a7c36d5644, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 72babdc58a5296b3298e2ee67686ae39, type: 2}
+    - target: {fileID: 13301448722178390, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
+      propertyPath: tutorials.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: edb768e47080c06109d4c3e8202835cc, type: 2}
     - target: {fileID: 1279804161561911779, guid: c296cf4ec0a512de68a63e12706800b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
