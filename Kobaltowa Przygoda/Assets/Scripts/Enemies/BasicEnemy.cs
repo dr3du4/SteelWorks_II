@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BasicEnemy : Enemy
 {
@@ -79,6 +80,16 @@ public class BasicEnemy : Enemy
                 agent.SetDestination(nest.position);
                 if(agent.speed != kidnapSpeed)
                     agent.speed = kidnapSpeed;
+
+                foreach(Kid k in carriedWorkers)
+                {
+                    //k.transform.position = transform.position + new Vector3(0, 1f);
+                    k.transform.SetPositionAndRotation(transform.position + new Vector3(0, 1f), Quaternion.Euler(90f, transform.rotation.y, transform.rotation.z));
+                    //k.transform.SetPositionAndRotation(transform.position + new Vector3(0, 0.5f), Quaternion.Euler(0, 0, 180f));
+                    //k.transform.rotation.SetEulerAngles();
+                    k.GetComponent<NavMeshAgent>().ResetPath();
+                    k.GetComponent<NavMeshAgent>().height = 0.1f;
+                }
 
                 if (agent.remainingDistance <= 0.1f)
                 {
