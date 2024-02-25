@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 7
   title: Sklep
-  background: {fileID: 21300000, guid: d9957d8490200bc418733b782f1b72b6, type: 3}
+  background: {fileID: 21300000, guid: 9d9d4ae988f98a6428354986e015d628, type: 3}
   text: "Po zebraniu kobaltu, dostajesz pieni\u0105dze do wykorzystania w sklepie,
     aby otworzy\u0107 sklep naci\u015Bnij TAB."
   nextIndex: -1

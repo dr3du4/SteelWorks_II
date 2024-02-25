@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 4
   title: Monster
-  background: {fileID: 21300000, guid: c59ab66b889713a48a3966c2b7cc3b60, type: 3}
+  background: {fileID: 21300000, guid: ac60912a5dc234c41b11a015824a2fb2, type: 3}
   text: "Potwory \u015Bledz\u0105 i zabijaj\u0105 pracownik\xF3w. Mo\u017Cesz im
     przeszkadza\u0107 zastawiaj\u0105c na nie pu\u0142apki pod przyciskiem T"
   nextIndex: -1

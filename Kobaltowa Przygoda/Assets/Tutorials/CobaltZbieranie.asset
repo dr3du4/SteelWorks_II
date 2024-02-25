@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 2
   title: Zbieranie kobaltu
-  background: {fileID: 21300000, guid: b4ee56833e770d04a8590f6576c7eb78, type: 3}
+  background: {fileID: 21300000, guid: 0b663430ad0720e4bb7c8585c4d48a0f, type: 3}
   text: "Po znalezieniu z\u0142o\u017Ca kobaltu u\u017Cyj strza\u0142ek na klawiaturze
     i E aby zatwierdzi\u0107 liczb\u0119 pracownik\xF3w do kopania. Wci\u015Bnij
     ponownie E przy z\u0142o\u017Cu, aby zabra\u0107 pracownik\xF3w z powrotem. Z\u0142o\u017Ca
