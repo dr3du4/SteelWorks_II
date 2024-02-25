@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 5
   title: "potw\xF3r \u015Bcigacz (pu\u0142apki)"
-  background: {fileID: 21300000, guid: e75d718936c1ca8458a5925f2029515a, type: 3}
+  background: {fileID: 21300000, guid: 5533d08567a78f8429c2287310743198, type: 3}
   text: "Niekt\xF3re potwory ci\u0105gn\u0105 pracownik\xF3w do swoich le\u017Cy
     zanim ich zabij\u0105. Aby przeszkodzi\u0107 mu ,mo\u017Cesz podej\u015B\u0107
     do niego i zawo\u0142a\u0107 pracownika klawiszem R.\_"
