@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   isFollow: 1
+  isEaten: 0
   maxDistance: 3
   movementSpeed: 4
   isMining: 0
