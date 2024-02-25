@@ -18,7 +18,7 @@ public class SnailAnimator : MonoBehaviour
     }
     private void Update()
     {
-        _animator.SetBool("full", _based.kidnapping);
+        _animator.SetBool("full", (_based.kidnapping && _based.GetCarriedWorkers().Count > 0));
         CheckMovementDirection();
     }
     

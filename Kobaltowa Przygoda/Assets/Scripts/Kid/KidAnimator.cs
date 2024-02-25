@@ -34,10 +34,10 @@ public class KidAnimator : MonoBehaviour
         Vector3 movement = currentPosition - previousPosition;
 
         // Sprawdzenie kierunku na podstawie składowej x
-        if (movement.x > 0) {
+        if (movement.x > 0.006f) {
             _renderer.flipX = true;
         }
-        else if (movement.x < 0)
+        else if (movement.x < -0.006f)
         {
             _renderer.flipX = false;
         }
