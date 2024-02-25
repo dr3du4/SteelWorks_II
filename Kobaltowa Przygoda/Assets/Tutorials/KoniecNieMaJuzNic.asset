@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 8
   title: Koniec dnia
-  background: {fileID: 21300000, guid: 1528321241206ab4abd15a33e30f622c, type: 3}
+  background: {fileID: 21300000, guid: 66a4a67b71632304aae7e1a7c9f9da95, type: 3}
   text: "Na zebranie kobaltu jest ograniczony czas wybuchem jaskini. Czas pozosta\u0142y
     do wybuchu \u0142adunku widoczny jest w trakcie rozgrywki.\_"
-  nextIndex: -1
+  nextIndex: 9

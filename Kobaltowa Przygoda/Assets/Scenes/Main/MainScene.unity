@@ -673,6 +673,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8819225585985328552, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: tutorials.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819225585985328552, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: tutorials.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 72babdc58a5296b3298e2ee67686ae39, type: 2}
+    - target: {fileID: 8819225585985328552, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: tutorials.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: edb768e47080c06109d4c3e8202835cc, type: 2}
+    - target: {fileID: 8819225585985328552, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: tutorials.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876132692059138197, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876132692059138197, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876132692059138197, guid: 83b6abc29a497394e9260692148f5b58, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
